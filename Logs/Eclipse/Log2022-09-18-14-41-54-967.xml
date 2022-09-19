@@ -1,0 +1,1104 @@
+<Events startTimestamp="1663526514967" logVersion="1.0.0.202208150223">
+  <Command __id="1" _type="MoveCaretCommand" caretOffset="409" date="Sun Sep 18 14:41:55 EDT 2022" docOffset="480" starttimestamp="1663526514967" timestamp="243" />
+  <Command __id="3" _type="PauseCommand" date="Sun Sep 18 14:41:57 EDT 2022" range="2s-5s" starttimestamp="1663526514967" timestamp="2970">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[2719]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="33" _type="ShellCommand" date="Sun Sep 18 14:45:02 EDT 2022" starttimestamp="1663526514967" timestamp="187135" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="0" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:41:55 EDT 2022" docASTNodeCount="82" docActiveCodeLength="553" docExpressionCount="49" docLength="553" projectName="A02" starttimestamp="1663526514967" timestamp="95">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/Factory/SocialDistanceClassifierFactory.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package ass2.Factory;
+import gradingTools.comp524f20.assignment1.WekaUtil;
+import weka.classifiers.Classifier;
+import weka.classifiers.trees.J48;
+
+public class SocialDistanceClassifierFactory {
+	static Classifier aClassifier;
+	
+	public static Classifier getSingleton() {
+		if (aClassifier == null) {
+			aClassifier = new J48();
+		}
+		String aWekaFile = "SafeSocialization.txt";
+		WekaUtil.buildTreeModel(aClassifier, aWekaFile);
+		return aClassifier;
+	}
+	
+	public static void setSingleton(Classifier newClassifier) {
+		aClassifier = newClassifier;
+	}
+}
+]]></snapshot>
+  </Command>
+  <Command __id="36" _type="PauseCommand" date="Sun Sep 18 14:45:33 EDT 2022" range="30s-1m" starttimestamp="1663526514967" timestamp="218190">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[31055]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="37" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:45:33 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="218696" />
+  <Command __id="35" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:45:33 EDT 2022" docASTNodeCount="274" docActiveCodeLength="1725" docExpressionCount="172" docLength="1725" projectName="A02" starttimestamp="1663526514967" timestamp="218190">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/Models/AbstractModel.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package ass2.Models;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+
+public abstract class AbstractModel implements SafeModel{
+	protected Integer distance;
+	protected Integer duration;
+	protected Integer exhalation;
+	protected Boolean safe;
+	PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
+	
+	public AbstractModel() {
+		distance = null;
+		duration = null;
+		exhalation = null;
+		safe = null;
+	}
+	
+	@Override
+	public int getDistance() {
+		return distance;
+	}
+	
+	@Override
+	public int getDuration() {
+		return duration;
+	}
+	
+	@Override
+	public int getExhalationLevel() {
+		return exhalation;
+	}
+	
+	@Override
+	public void setValues(int aDistance, int aDuration, int aExhalation) {
+		Integer preDistance = this.distance;
+		Integer preDuration = this.duration;
+		Integer preExhalation = this.exhalation;
+		Boolean preSafe = this.safe;
+		this.distance = Integer.valueOf(aDistance);
+		this.duration = Integer.valueOf(aDuration);
+		this.exhalation = Integer.valueOf(aExhalation);
+		this.safe = Boolean.valueOf(isSafe());
+		propertyChangeSupport.firePropertyChange(DISTANCE, (Integer)preDistance, (Integer)distance);
+		propertyChangeSupport.firePropertyChange(DURATION, (Integer)preDuration, (Integer)duration);
+		propertyChangeSupport.firePropertyChange(EXHALATIONLEVEL, (Integer)preExhalation, (Integer)exhalation);
+		propertyChangeSupport.firePropertyChange(SAFE, preSafe, safe);
+		resetValues();
+	}
+	
+	private void resetValues() {
+		distance = null;
+		duration = null;
+		exhalation = null;
+		safe = null;
+	}
+	
+	@Override
+	public void addPropertyChangeListener(PropertyChangeListener aListener) {
+		propertyChangeSupport.addPropertyChangeListener(aListener);
+	}
+}
+]]></snapshot>
+  </Command>
+  <Command __id="39" _type="PauseCommand" date="Sun Sep 18 14:45:34 EDT 2022" range="1s-2s" starttimestamp="1663526514967" timestamp="219716">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[1019]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="40" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:45:34 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="219917" />
+  <Command __id="38" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:45:34 EDT 2022" docASTNodeCount="81" docActiveCodeLength="518" docExpressionCount="32" docLength="518" projectName="A02" starttimestamp="1663526514967" timestamp="219715">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/Models/SafeModel.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package ass2.Models;
+import java.beans.PropertyChangeListener;
+
+public interface SafeModel{
+	public static final String DISTANCE = "distance";
+	public static final String DURATION = "duration";
+	public static final String EXHALATIONLEVEL = "exhalationLevel";
+	public static final String SAFE = "safe";
+	int getDistance();
+	int getDuration();
+	int getExhalationLevel();
+	boolean isSafe();
+	void setValues(int distance, int duration, int exhalation);
+	void addPropertyChangeListener(PropertyChangeListener aListener);
+}
+]]></snapshot>
+  </Command>
+  <Command __id="42" _type="PauseCommand" date="Sun Sep 18 14:45:38 EDT 2022" range="2s-5s" starttimestamp="1663526514967" timestamp="223825">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[3908]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="43" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:45:39 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="224089" />
+  <Command __id="41" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:45:38 EDT 2022" docASTNodeCount="31" docActiveCodeLength="260" docExpressionCount="20" docLength="260" projectName="A02" starttimestamp="1663526514967" timestamp="223825">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/Models/DerivingModel.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package ass2.Models;
+import ass2.BasicSocialDistanceUtility;
+
+public class DerivingModel extends AbstractModel{
+
+	@Override
+	public boolean isSafe() {
+		return BasicSocialDistanceUtility.isDerivedSafe(getDistance(), getDuration(), getExhalationLevel());
+	}
+
+}
+]]></snapshot>
+  </Command>
+  <Command __id="45" _type="PauseCommand" date="Sun Sep 18 14:45:40 EDT 2022" range="1s-2s" starttimestamp="1663526514967" timestamp="225986">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[1896]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="46" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:45:41 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="226153" />
+  <Command __id="48" _type="PauseCommand" date="Sun Sep 18 14:45:44 EDT 2022" range="2s-5s" starttimestamp="1663526514967" timestamp="229127">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[2974]]></pause>
+    <nextType><![CDATA[Move Caret]]></nextType>
+    <next><![CDATA[MoveCaretCommand]]></next>
+  </Command>
+  <Command __id="47" _type="MoveCaretCommand" caretOffset="483" date="Sun Sep 18 14:45:44 EDT 2022" docOffset="524" starttimestamp="1663526514967" timestamp="229127" />
+  <Command __id="50" _type="PauseCommand" date="Sun Sep 18 14:46:05 EDT 2022" range="20s-30s" starttimestamp="1663526514967" timestamp="250379">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[21252]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="49" _type="ShellCommand" date="Sun Sep 18 14:46:05 EDT 2022" starttimestamp="1663526514967" timestamp="250379" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="52" _type="PauseCommand" date="Sun Sep 18 14:46:39 EDT 2022" range="30s-1m" starttimestamp="1663526514967" timestamp="284046">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[33667]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="51" _type="ShellCommand" date="Sun Sep 18 14:46:39 EDT 2022" starttimestamp="1663526514967" timestamp="284046" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="54" _type="PauseCommand" date="Sun Sep 18 14:46:41 EDT 2022" range="2s-5s" starttimestamp="1663526514967" timestamp="286122">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[2076]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="53" _type="ShellCommand" date="Sun Sep 18 14:46:41 EDT 2022" starttimestamp="1663526514967" timestamp="286122" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="56" _type="PauseCommand" date="Sun Sep 18 14:46:45 EDT 2022" range="2s-5s" starttimestamp="1663526514967" timestamp="290536">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[4414]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="55" _type="ShellCommand" date="Sun Sep 18 14:46:45 EDT 2022" starttimestamp="1663526514967" timestamp="290536" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="44" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:45:40 EDT 2022" docASTNodeCount="274" docActiveCodeLength="1725" docExpressionCount="172" docLength="1725" projectName="A02" starttimestamp="1663526514967" timestamp="225985">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/Models/AbstractModel.java]]></filePath>
+    <diff><![CDATA[Diff(EQUAL,"package ass2.Models;import java.beans.PropertyChangeListener;import java.beans.PropertyChangeSupport;public abstract class AbstractModel implements SafeModel{	protected Integer distance;	protected Integer duration;	protected Integer exhalation;	protected Boolean safe;	PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);		public AbstractModel() {		distance = null;		duration = null;		exhalation = null;		safe = null;	}		@Override	public int getDistance() {		return distance;	}		@Override	public int getDuration() {		return duration;	}		@Override	public int getExhalationLevel() {		return exhalation;	}		@Override	public void setValues(int aDistance, int aDuration, int aExhalation) {		Integer preDistance = this.distance;		Integer preDuration = this.duration;		Integer preExhalation = this.exhalation;		Boolean preSafe = this.safe;		this.distance = Integer.valueOf(aDistance);		this.duration = Integer.valueOf(aDuration);		this.exhalation = Integer.valueOf(aExhalation);		this.safe = Boolean.valueOf(isSafe());		propertyChangeSupport.firePropertyChange(DISTANCE, (Integer)preDistance, (Integer)distance);		propertyChangeSupport.firePropertyChange(DURATION, (Integer)preDuration, (Integer)duration);		propertyChangeSupport.firePropertyChange(EXHALATIONLEVEL, (Integer)preExhalation, (Integer)exhalation);		propertyChangeSupport.firePropertyChange(SAFE, preSafe, safe);		resetValues();	}		private void resetValues() {		distance = null;		duration = null;		exhalation = null;		safe = null;	}		@Override	public void addPropertyChangeListener(PropertyChangeListener aListener) {		propertyChangeSupport.addPropertyChangeListener(aListener);	}}")]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="58" _type="PauseCommand" date="Sun Sep 18 14:49:21 EDT 2022" range="2m-5m" starttimestamp="1663526514967" timestamp="446775">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[156239]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="59" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:49:22 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="447058" />
+  <Command __id="57" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:49:21 EDT 2022" docASTNodeCount="129" docActiveCodeLength="845" docExpressionCount="79" docLength="845" projectName="A02" starttimestamp="1663526514967" timestamp="446775">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/SocialDistanceController.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package ass2;
+
+import java.util.Scanner;
+
+import ass2.Factory.ModelFactory;
+
+public class SocialDistanceController {
+	public SocialDistanceController() {
+	}
+	
+	public void processInput() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Please enter data regarding your guest interaction.");
+		for (;;) {
+			int distance = getNextInt("Distance", scanner);
+			if (distance < 0) {
+				break;
+			}
+			int duration = getNextInt("Duration?", scanner);
+			if (duration < 0) {
+				break;
+			}
+			int exhalation = getNextInt("Exhalation Level?", scanner);
+			if (exhalation < 0) {
+				break;
+			}
+			ModelFactory.getSingleton().setValues(distance, duration, exhalation);
+		}
+		System.out.println("Quitting");
+	}
+	
+	private int getNextInt(String prompt, Scanner scanner) {
+		System.out.println(prompt);
+		return scanner.nextInt();
+	}
+}
+]]></snapshot>
+  </Command>
+  <Command __id="61" _type="PauseCommand" date="Sun Sep 18 14:49:50 EDT 2022" range="20s-30s" starttimestamp="1663526514967" timestamp="475844">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[28786]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="62" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:49:51 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="476090" />
+  <Command __id="60" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:49:50 EDT 2022" docASTNodeCount="83" docActiveCodeLength="504" docExpressionCount="58" docLength="504" projectName="A02" starttimestamp="1663526514967" timestamp="475844">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/View/SocialDistanceView.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package ass2.View;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+
+import ass2.Models.SafeModel;
+
+public class SocialDistanceView implements GeneralView{
+	public SocialDistanceView() {		
+	}
+	
+	@Override
+	public void propertyChange(PropertyChangeEvent event) {
+		System.out.println(event);
+		if (SafeModel.SAFE == event.getPropertyName()) {
+			Boolean isSafe = (Boolean) event.getNewValue();
+			System.out.println(String.format(isSafe ? "Safe." : "Not Safe!"));
+		}
+	}
+}
+]]></snapshot>
+  </Command>
+  <Command __id="64" _type="PauseCommand" date="Sun Sep 18 14:50:10 EDT 2022" range="10s-20s" starttimestamp="1663526514967" timestamp="495351">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[19261]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="65" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:50:10 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="495577" />
+  <Command __id="63" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:50:10 EDT 2022" docASTNodeCount="40" docActiveCodeLength="260" docExpressionCount="23" docLength="260" projectName="A02" starttimestamp="1663526514967" timestamp="495351">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/DerivingMain.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package ass2;
+
+import ass2.Factory.ModelFactory;
+import ass2.Models.DerivingModel;
+
+public class DerivingMain{
+	public static void main (String [] args) {
+		ModelFactory.setSingleton(new DerivingModel());
+		MVCSocialDistanceUtil.startSocialDistanceMVC();
+	}
+}
+]]></snapshot>
+  </Command>
+  <Command __id="67" _type="PauseCommand" date="Sun Sep 18 14:50:16 EDT 2022" range="5s-10s" starttimestamp="1663526514967" timestamp="501570">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[5993]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="68" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:50:16 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="501761" />
+  <Command __id="66" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:50:16 EDT 2022" docASTNodeCount="129" docActiveCodeLength="845" docExpressionCount="79" docLength="845" projectName="A02" starttimestamp="1663526514967" timestamp="501570">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/SocialDistanceController.java]]></filePath>
+    <diff><![CDATA[Diff(EQUAL,"package ass2;import java.util.Scanner;import ass2.Factory.ModelFactory;public class SocialDistanceController {	public SocialDistanceController() {	}		public void processInput() {		Scanner scanner = new Scanner(System.in);		System.out.println("Please enter data regarding your guest interaction.");		for (;;) {			int distance = getNextInt("Distance", scanner);			if (distance < 0) {				break;			}			int duration = getNextInt("Duration?", scanner);			if (duration < 0) {				break;			}			int exhalation = getNextInt("Exhalation Level?", scanner);			if (exhalation < 0) {				break;			}			ModelFactory.getSingleton().setValues(distance, duration, exhalation);		}		System.out.println("Quitting");	}		private int getNextInt(String prompt, Scanner scanner) {		System.out.println(prompt);		return scanner.nextInt();	}}")]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="70" _type="PauseCommand" date="Sun Sep 18 14:50:30 EDT 2022" range="10s-20s" starttimestamp="1663526514967" timestamp="515247">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[13486]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="71" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:50:30 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="515481" />
+  <Command __id="69" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:50:30 EDT 2022" docASTNodeCount="66" docActiveCodeLength="373" docExpressionCount="37" docLength="373" projectName="A02" starttimestamp="1663526514967" timestamp="515247">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/Factory/ModelFactory.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package ass2.Factory;
+
+import ass2.Models.AbstractModel;
+import ass2.Models.BasicModel;
+import ass2.Models.SafeModel;
+
+public class ModelFactory {
+	static SafeModel model;
+	
+	public static SafeModel getSingleton() {
+		if (model == null) {
+			model = new BasicModel();
+		}
+		return model;
+	}
+	
+	public static void setSingleton(SafeModel newModel) {
+		model = newModel;
+	}
+}
+]]></snapshot>
+  </Command>
+  <Command __id="73" _type="PauseCommand" date="Sun Sep 18 14:50:36 EDT 2022" range="5s-10s" starttimestamp="1663526514967" timestamp="521304">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[5823]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="74" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:50:36 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="521491" />
+  <Command __id="72" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:50:36 EDT 2022" docASTNodeCount="31" docActiveCodeLength="260" docExpressionCount="20" docLength="260" projectName="A02" starttimestamp="1663526514967" timestamp="521304">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/Models/DerivingModel.java]]></filePath>
+    <diff><![CDATA[Diff(EQUAL,"package ass2.Models;import ass2.BasicSocialDistanceUtility;public class DerivingModel extends AbstractModel{	@Override	public boolean isSafe() {		return BasicSocialDistanceUtility.isDerivedSafe(getDistance(), getDuration(), getExhalationLevel());	}}")]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="76" _type="PauseCommand" date="Sun Sep 18 14:50:40 EDT 2022" range="2s-5s" starttimestamp="1663526514967" timestamp="525649">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[4158]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="77" _type="MoveCaretCommand" caretOffset="483" date="Sun Sep 18 14:50:40 EDT 2022" docOffset="524" starttimestamp="1663526514967" timestamp="525831" />
+  <Command __id="75" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:50:40 EDT 2022" docASTNodeCount="274" docActiveCodeLength="1725" docExpressionCount="172" docLength="1725" projectName="A02" starttimestamp="1663526514967" timestamp="525649">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/Models/AbstractModel.java]]></filePath>
+    <diff><![CDATA[Diff(EQUAL,"package ass2.Models;import java.beans.PropertyChangeListener;import java.beans.PropertyChangeSupport;public abstract class AbstractModel implements SafeModel{	protected Integer distance;	protected Integer duration;	protected Integer exhalation;	protected Boolean safe;	PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);		public AbstractModel() {		distance = null;		duration = null;		exhalation = null;		safe = null;	}		@Override	public int getDistance() {		return distance;	}		@Override	public int getDuration() {		return duration;	}		@Override	public int getExhalationLevel() {		return exhalation;	}		@Override	public void setValues(int aDistance, int aDuration, int aExhalation) {		Integer preDistance = this.distance;		Integer preDuration = this.duration;		Integer preExhalation = this.exhalation;		Boolean preSafe = this.safe;		this.distance = Integer.valueOf(aDistance);		this.duration = Integer.valueOf(aDuration);		this.exhalation = Integer.valueOf(aExhalation);		this.safe = Boolean.valueOf(isSafe());		propertyChangeSupport.firePropertyChange(DISTANCE, (Integer)preDistance, (Integer)distance);		propertyChangeSupport.firePropertyChange(DURATION, (Integer)preDuration, (Integer)duration);		propertyChangeSupport.firePropertyChange(EXHALATIONLEVEL, (Integer)preExhalation, (Integer)exhalation);		propertyChangeSupport.firePropertyChange(SAFE, preSafe, safe);		resetValues();	}		private void resetValues() {		distance = null;		duration = null;		exhalation = null;		safe = null;	}		@Override	public void addPropertyChangeListener(PropertyChangeListener aListener) {		propertyChangeSupport.addPropertyChangeListener(aListener);	}}")]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="79" _type="PauseCommand" date="Sun Sep 18 14:51:07 EDT 2022" range="20s-30s" starttimestamp="1663526514967" timestamp="552696">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[26865]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="80" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:51:07 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="552902" />
+  <Command __id="78" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:51:07 EDT 2022" docASTNodeCount="129" docActiveCodeLength="845" docExpressionCount="79" docLength="845" projectName="A02" starttimestamp="1663526514967" timestamp="552696">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/SocialDistanceController.java]]></filePath>
+    <diff><![CDATA[Diff(EQUAL,"package ass2;import java.util.Scanner;import ass2.Factory.ModelFactory;public class SocialDistanceController {	public SocialDistanceController() {	}		public void processInput() {		Scanner scanner = new Scanner(System.in);		System.out.println("Please enter data regarding your guest interaction.");		for (;;) {			int distance = getNextInt("Distance", scanner);			if (distance < 0) {				break;			}			int duration = getNextInt("Duration?", scanner);			if (duration < 0) {				break;			}			int exhalation = getNextInt("Exhalation Level?", scanner);			if (exhalation < 0) {				break;			}			ModelFactory.getSingleton().setValues(distance, duration, exhalation);		}		System.out.println("Quitting");	}		private int getNextInt(String prompt, Scanner scanner) {		System.out.println(prompt);		return scanner.nextInt();	}}")]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="82" _type="PauseCommand" date="Sun Sep 18 14:51:29 EDT 2022" range="20s-30s" starttimestamp="1663526514967" timestamp="574446">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[21544]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="83" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:51:29 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="574644" />
+  <Command __id="81" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:51:29 EDT 2022" docASTNodeCount="83" docActiveCodeLength="504" docExpressionCount="58" docLength="504" projectName="A02" starttimestamp="1663526514967" timestamp="574446">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/View/SocialDistanceView.java]]></filePath>
+    <diff><![CDATA[Diff(EQUAL,"package ass2.View;import java.beans.PropertyChangeEvent;import java.beans.PropertyChangeListener;import ass2.Models.SafeModel;public class SocialDistanceView implements GeneralView{	public SocialDistanceView() {			}		@Override	public void propertyChange(PropertyChangeEvent event) {		System.out.println(event);		if (SafeModel.SAFE == event.getPropertyName()) {			Boolean isSafe = (Boolean) event.getNewValue();			System.out.println(String.format(isSafe ? "Safe." : "Not Safe!"));		}	}}")]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="85" _type="PauseCommand" date="Sun Sep 18 14:51:48 EDT 2022" range="10s-20s" starttimestamp="1663526514967" timestamp="593971">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[19327]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="86" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:51:49 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="594186" />
+  <Command __id="84" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:51:48 EDT 2022" docASTNodeCount="16" docActiveCodeLength="126" docExpressionCount="10" docLength="126" projectName="A02" starttimestamp="1663526514967" timestamp="593971">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/View/GeneralView.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package ass2.View;
+import java.beans.PropertyChangeListener;
+
+public interface GeneralView extends PropertyChangeListener{
+
+}
+]]></snapshot>
+  </Command>
+  <Command __id="88" _type="PauseCommand" date="Sun Sep 18 14:51:53 EDT 2022" range="2s-5s" starttimestamp="1663526514967" timestamp="598546">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[4360]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="87" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:51:53 EDT 2022" docASTNodeCount="81" docActiveCodeLength="518" docExpressionCount="32" docLength="518" projectName="A02" starttimestamp="1663526514967" timestamp="598546">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/Models/SafeModel.java]]></filePath>
+    <diff><![CDATA[Diff(EQUAL,"package ass2.Models;import java.beans.PropertyChangeListener;public interface SafeModel{	public static final String DISTANCE = "distance";	public static final String DURATION = "duration";	public static final String EXHALATIONLEVEL = "exhalationLevel";	public static final String SAFE = "safe";	int getDistance();	int getDuration();	int getExhalationLevel();	boolean isSafe();	void setValues(int distance, int duration, int exhalation);	void addPropertyChangeListener(PropertyChangeListener aListener);}")]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="89" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:51:53 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="598751" />
+  <Command __id="91" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:51:54 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="599967" />
+  <Command __id="90" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:51:54 EDT 2022" docASTNodeCount="31" docActiveCodeLength="270" docExpressionCount="20" docLength="270" projectName="A02" starttimestamp="1663526514967" timestamp="599733">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/Models/InterpolatingModel.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package ass2.Models;
+import ass2.BasicSocialDistanceUtility;
+
+public class InterpolatingModel extends AbstractModel{
+
+	@Override
+	public boolean isSafe() {
+		return BasicSocialDistanceUtility.isInterpolatedSafe(getDistance(), getDuration(), getExhalationLevel());
+	}
+
+}
+]]></snapshot>
+  </Command>
+  <Command __id="93" _type="PauseCommand" date="Sun Sep 18 14:51:58 EDT 2022" range="2s-5s" starttimestamp="1663526514967" timestamp="603569">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[3602]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="94" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:51:58 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="603768" />
+  <Command __id="92" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:51:58 EDT 2022" docASTNodeCount="66" docActiveCodeLength="373" docExpressionCount="37" docLength="373" projectName="A02" starttimestamp="1663526514967" timestamp="603569">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/Factory/ModelFactory.java]]></filePath>
+    <diff><![CDATA[Diff(EQUAL,"package ass2.Factory;import ass2.Models.AbstractModel;import ass2.Models.BasicModel;import ass2.Models.SafeModel;public class ModelFactory {	static SafeModel model;		public static SafeModel getSingleton() {		if (model == null) {			model = new BasicModel();		}		return model;	}		public static void setSingleton(SafeModel newModel) {		model = newModel;	}}")]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="96" _type="PauseCommand" date="Sun Sep 18 14:52:10 EDT 2022" range="10s-20s" starttimestamp="1663526514967" timestamp="615787">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[12019]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="97" _type="MoveCaretCommand" caretOffset="13" date="Sun Sep 18 14:52:11 EDT 2022" docOffset="13" starttimestamp="1663526514967" timestamp="616036" />
+  <Command __id="95" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:52:10 EDT 2022" docASTNodeCount="45" docActiveCodeLength="347" docExpressionCount="31" docLength="347" projectName="A02" starttimestamp="1663526514967" timestamp="615787">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/MVCSocialDistanceUtil.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package ass2;
+
+import ass2.Factory.ControllerFactory;
+import ass2.Factory.ModelFactory;
+import ass2.Factory.ViewFactory;
+
+public class MVCSocialDistanceUtil {
+	public static void startSocialDistanceMVC() {
+		ModelFactory.getSingleton().addPropertyChangeListener(ViewFactory.getSingleton());
+		ControllerFactory.getSingleton().processInput();
+	}
+}
+]]></snapshot>
+  </Command>
+  <Command __id="99" _type="PauseCommand" date="Sun Sep 18 14:52:17 EDT 2022" range="5s-10s" starttimestamp="1663526514967" timestamp="622657">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[6621]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="100" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:52:17 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="622940" />
+  <Command __id="98" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:52:17 EDT 2022" docASTNodeCount="77" docActiveCodeLength="601" docExpressionCount="55" docLength="993" projectName="A02" starttimestamp="1663526514967" timestamp="622657">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/RunF22A02Tests.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package ass2;
+import grader.basics.execution.BasicProjectExecution;
+import gradingTools.comp524f22.assignment2.F22Assignment2Suite;
+import trace.grader.basics.GraderBasicsTraceUtility;
+import util.trace.Tracer;
+
+public class RunF22A02Tests {
+	public static void main(String[] args) {
+		// if you set this to false, grader steps will not be traced
+		GraderBasicsTraceUtility.setTracerShowInfo(true);	
+		// if you set this to false, all grader steps will be traced,
+		// not just the ones that failed		
+		GraderBasicsTraceUtility.setBufferTracedMessages(true);
+		// Change this number if a test trace gets longer than 600 and is clipped
+		GraderBasicsTraceUtility.setMaxPrintedTraces(600);
+		// Change this number if all traces together are longer than 2000
+		GraderBasicsTraceUtility.setMaxTraces(2000);
+		// Change this number if your process times out prematurely
+		BasicProjectExecution.setProcessTimeOut(5);
+		// You need to always call such a method
+		F22Assignment2Suite.main(args);
+	}
+}
+]]></snapshot>
+  </Command>
+  <Command __id="102" _type="PauseCommand" date="Sun Sep 18 14:52:19 EDT 2022" range="1s-2s" starttimestamp="1663526514967" timestamp="624544">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[1604]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="103" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:52:19 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="624783" />
+  <Command __id="101" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:52:19 EDT 2022" docASTNodeCount="129" docActiveCodeLength="845" docExpressionCount="79" docLength="845" projectName="A02" starttimestamp="1663526514967" timestamp="624544">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/SocialDistanceController.java]]></filePath>
+    <diff><![CDATA[Diff(EQUAL,"package ass2;import java.util.Scanner;import ass2.Factory.ModelFactory;public class SocialDistanceController {	public SocialDistanceController() {	}		public void processInput() {		Scanner scanner = new Scanner(System.in);		System.out.println("Please enter data regarding your guest interaction.");		for (;;) {			int distance = getNextInt("Distance", scanner);			if (distance < 0) {				break;			}			int duration = getNextInt("Duration?", scanner);			if (duration < 0) {				break;			}			int exhalation = getNextInt("Exhalation Level?", scanner);			if (exhalation < 0) {				break;			}			ModelFactory.getSingleton().setValues(distance, duration, exhalation);		}		System.out.println("Quitting");	}		private int getNextInt(String prompt, Scanner scanner) {		System.out.println(prompt);		return scanner.nextInt();	}}")]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="105" _type="PauseCommand" date="Sun Sep 18 14:52:23 EDT 2022" range="2s-5s" starttimestamp="1663526514967" timestamp="628671">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[3888]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="106" _type="MoveCaretCommand" caretOffset="548" date="Sun Sep 18 14:52:23 EDT 2022" docOffset="548" starttimestamp="1663526514967" timestamp="628956" />
+  <Command __id="104" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:52:23 EDT 2022" docASTNodeCount="49" docActiveCodeLength="548" docExpressionCount="29" docLength="548" projectName="A02" starttimestamp="1663526514967" timestamp="628671">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/SocialDistanceUtilityTesterMain.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package ass2;
+
+public class SocialDistanceUtilityTesterMain {
+	
+	public static void main (String[] args) {
+		BasicSocialDistanceUtility.printGivenAndGeneratedCombinationsDerivedSafety();
+		BasicSocialDistanceUtility.printGivenAndGeneratedCombinationsInferredSafety();
+		int medianExhalation = 30;
+		BasicSocialDistanceUtility.printSafeDistancesAndDurations(medianExhalation);
+		BasicSocialDistanceUtility.printSafeDistancesAndDurations(medianExhalation - 1);
+		BasicSocialDistanceUtility.printSafeDistancesAndDurations(medianExhalation + 2);
+	}
+}
+
+]]></snapshot>
+  </Command>
+  <Command __id="108" _type="PauseCommand" date="Sun Sep 18 14:52:25 EDT 2022" range="1s-2s" starttimestamp="1663526514967" timestamp="630706">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[1750]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="109" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:52:25 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="630984" />
+  <Command __id="107" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:52:25 EDT 2022" docASTNodeCount="40" docActiveCodeLength="260" docExpressionCount="23" docLength="260" projectName="A02" starttimestamp="1663526514967" timestamp="630706">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/DerivingMain.java]]></filePath>
+    <diff><![CDATA[Diff(EQUAL,"package ass2;import ass2.Factory.ModelFactory;import ass2.Models.DerivingModel;public class DerivingMain{	public static void main (String [] args) {		ModelFactory.setSingleton(new DerivingModel());		MVCSocialDistanceUtil.startSocialDistanceMVC();	}}")]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="111" _type="PauseCommand" date="Sun Sep 18 14:52:33 EDT 2022" range="5s-10s" starttimestamp="1663526514967" timestamp="638150">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[7166]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="112" _type="MoveCaretCommand" caretOffset="3406" date="Sun Sep 18 14:52:33 EDT 2022" docOffset="3574" starttimestamp="1663526514967" timestamp="638551" />
+  <Command __id="110" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:52:33 EDT 2022" docASTNodeCount="1198" docActiveCodeLength="7203" docExpressionCount="724" docLength="9434" projectName="A02" starttimestamp="1663526514967" timestamp="638150">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/BasicSocialDistanceUtility.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package ass2;
+
+import java.util.ArrayList;
+
+import gradingTools.comp524f20.assignment1.WekaUtil;
+import weka.classifiers.Classifier;
+
+import java.util.List;
+
+import ass2.Factory.SocialDistanceClassifierFactory;
+
+public class BasicSocialDistanceUtility {
+	
+	private static final int[][] safeCombinations = {{13, 30, 30}, {6, 30, 10}, {27, 30, 50}, {13, 15, 50}, {13, 120, 10}, {27, 120, 30}, {6, 15, 30}};
+	private static final String TRUE = "true";
+	private static final String FALSE = "false";
+	private static String resultAttributeName = "safe";
+	private static String[] resultValueNames = {TRUE, FALSE};
+	private static String[] featureNames = {"distance", "duration", "exhalation"};
+	
+	
+	/**
+	If the combination of the method parameters is safe, based on the given data, the
+	function returns true. Otherwise, it returns false.
+	 */
+	public static boolean isGivenSafe(int distance, int duration, int exhalation) {
+		for (int i = 0; i < safeCombinations.length; i ++) {
+			int[] combination = safeCombinations[i];
+			if (distance == combination[0] && duration == combination[1] && exhalation == combination[2]) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	/**
+	 The function interpolates each of the parameters to a value in Table 2, and determines if the
+	 interpolated values are safe based on whether they occur in Table 2. If it is distance, then it
+	 is interpolated low. In contract, if it's duration or exhalation, then it is interpolated high.
+	 */
+	public static boolean isInterpolatedSafe(int distance, int duration, int exhalation) {
+		int interpolatedDistance = lowInterpolationHelper(distance, 6, 13, 27);
+		int interpolatedDuration = highInterpolationHelper(duration, 15, 30, 120);
+		int interpolatedExhalation = highInterpolationHelper(exhalation, 10, 30, 50);
+		return isGivenSafe(interpolatedDistance, interpolatedDuration, interpolatedExhalation);
+	}
+	
+	/**
+	 The function interpolates each of the parameters to a value in Table 2, and determines if the
+	 interpolated values are safe based on whether they occur in Table 2.
+	 */
+	public static boolean isInterpolatedSafe(int distance, int duration) {
+		int exhalation = 30;
+		return isInterpolatedSafe(distance, duration, exhalation);
+	}
+	
+	/**
+	 The function interpolates each of the parameters to a value in Table 2, and determines if the
+	 interpolated values are safe based on whether they occur in Table 2.
+	 */
+	public static boolean isInterpolatedSafe(int distance) {
+		int exhalation = 30;
+		return isInterpolatedSafe(distance, exhalation);
+	}
+	
+	/**
+	 The function returns true if the combination of these three parameters is safer than at least one of
+	 the combinations in the table.
+	 */
+	public static boolean isDerivedSafe(int distance, int duration, int exhalation) {
+		for (int i = 0; i < safeCombinations.length; i ++) {
+			int ind1 = 0;
+			int ind2 = 1;
+			int ind3 = 2;
+			if (isSaferThan(distance, duration, exhalation, safeCombinations[i][ind1], safeCombinations[i][ind2], safeCombinations[i][ind3])) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	/**
+	 The function prints the (distance, duration, exhalation level, and safety) tuple, using a comma to
+	 separate the elements of the 4 tuple.
+	 */
+	public static void printGeneratedCombinationDerivedSafety(String ways) {
+		boolean isSafe = false;
+		int[] generatedValues = generateValuesHelper();
+		int distance= generatedValues[0];
+		int duration = generatedValues[1];
+		int exhalation = generatedValues[2];
+		if (ways.equals("inferred")) {
+			isSafe = isInferredSafe(distance, duration, exhalation);
+		}else {
+			isSafe = isDerivedSafe(distance, duration, exhalation);
+		}
+		printHelper(distance, duration, exhalation, isSafe);		
+	}
+		
+	public static void printGeneratedCombinationDerivedSafety() {
+		printGeneratedCombinationDerivedSafety("Derived");
+	}
+	
+	public static int[] generateValuesHelper() {
+		int maxDistance = 27;
+		int maxDuration = 120;
+		int maxExhalation = 50;
+		double multiplier = 1.2;
+		int distance = (int)(Math.random() * maxDistance * multiplier);
+		int duration = (int)(Math.random() * maxDuration * multiplier);
+		int exhalation = (int)(Math.random() * maxExhalation * multiplier);
+		int[] result = {distance, duration, exhalation};
+		return result;
+	}
+	
+	/**
+	 For each 3-tuple combination in Table 2, the function adds the Boolean true to create a 4-tuple
+	 combination and prints the 4-tuple. Also call printGeneratedCombinationDerivedSafety() ten times.
+	 */
+	public static void printGivenAndGeneratedCombinationsDerivedSafety(String ways) {
+		System.out.println("Distance,Duration,Exhalation,IsSafe");
+		for (int i = 0; i < safeCombinations.length; i ++) {
+			int[] combination = safeCombinations[i];
+			printHelper(combination[0], combination[1], combination[2], true);
+		}
+		System.out.println("----------------");
+		int times = 10;
+		for (int i = 0; i < times; i ++) {
+			printGeneratedCombinationDerivedSafety(ways);
+		}
+	}
+	
+	public static void printGivenAndGeneratedCombinationsDerivedSafety() {
+		printGivenAndGeneratedCombinationsDerivedSafety("Derived");
+	}
+	
+	/**
+	 The function computes a (possibly empty) list of given safe distance and duration
+	 pairs that are associated with an interpolation of the exhalation level in Table 2.
+	 If it is exhalation, then it is interpolated high.
+	 */
+	public static List<Integer[]> generateSafeDistancesAndDurations(int exhalation) {
+		int interpolatedExhalation = highInterpolationHelper(exhalation, 10, 30, 50);
+		ArrayList<Integer[]> result = new ArrayList<Integer[]>();
+		for (int i = 0; i < safeCombinations.length; i ++) {
+			if (safeCombinations[i][2] == interpolatedExhalation) {
+				Integer[] set = new Integer[]{safeCombinations[i][0], safeCombinations[i][1]};
+				result.add(set);
+			}
+		}
+		return result;
+	}
+	
+	/**
+	 The function uses the method above to determine the list of safe distances and durations for the 
+	 passed exhalation-level and prints the passed
+	 exhalation level together with the returned list
+	 */
+	public static void printSafeDistancesAndDurations(int exhalation) {
+		List<Integer[]> result = generateSafeDistancesAndDurations(exhalation);
+		System.out.print(exhalation + ",[");
+		for (int i = 0; i < result.size(); i ++) {
+			System.out.print("{");
+			Integer[] set = result.get(i);
+			for (int index = 0; index < set.length; index ++) {
+				System.out.print(set[index]);
+				if (index != set.length - 1) {
+					System.out.print(",");
+				}
+			}
+			System.out.print("}");
+		}
+		System.out.print("]");
+		System.out.println();
+	}
+	
+	/**
+	 The functions formats the input and prints the output.
+	 */
+	public static void printHelper(int distance, int duration, int exhalation, boolean isSafe) {
+		System.out.println(distance + "," + duration + "," + exhalation + "," + isSafe);
+	}
+	
+	/**
+	 The function determines and returns whether a given combination is safer than another given combination.
+	 */
+	public static boolean isSaferThan(int distance1, int duration1, int exhalation1, int distance2, int duration2, int exhalation2) {
+		return distance1 >= distance2 && duration1 <= duration2 && exhalation1 <= exhalation2;
+	}
+	
+	/**
+	 low interpolation to a sequence of values is either an element of the sequence or zero. If 
+	 it id distance, then it is interpolated low.
+	 */
+	public static int lowInterpolationHelper(int value, int small, int median, int high) {
+		int result = 0;
+		if (value < small) {
+			result = 0;
+		}else if (value > small && value < median) {
+			result = small;
+		}else if (value > median && value < high) {
+			result = median;
+		}else if (value > high){
+			result = high;
+		}else {
+			result = value;
+		}
+		return result;
+	}
+	
+	/**
+	 high interpolation to a sequence of values is either an element of the sequence or max integer.
+	 If it is duration or exhalation, then it is interpolated high.
+	 */
+	public static int highInterpolationHelper(int value, int small, int median, int high) {
+		int result = 0;
+		if (value < small) {
+			result = small;
+		}else if (value > small && value < median) {
+			result = median;
+		}else if (value > median && value < high) {
+			result = high;
+		}else if (value > high) {
+			result = Integer.MAX_VALUE;
+		}else {
+			result = value;
+		}
+		return result;
+	}
+	
+	public static boolean isInferredSafe(int distance, int duration, int exhalation) {
+		Classifier classifier = SocialDistanceClassifierFactory.getSingleton();
+		double[] anInputFeatureValues = {distance*1.0, duration*1.0, exhalation*1.0};
+		String resultString = WekaUtil.predictString(classifier, featureNames, anInputFeatureValues, resultAttributeName, resultValueNames);
+		return TRUE.equals(resultString)?true:false;
+	}
+	
+	public static void printGivenAndGeneratedCombinationsInferredSafety() {
+		printGivenAndGeneratedCombinationsDerivedSafety("inferred");
+	}
+	
+	public static int compareSafetyComputations() {
+		int correct = 0;
+		System.out.println("Distance,Duration,Exhalation,Derived,Inferred");
+		for (int i = 0; i < 10; i ++) {
+			int[] generatedValues = generateValuesHelper();
+			int distance = generatedValues[0];
+			int duration = generatedValues[1];
+			int exhalation = generatedValues[2];
+			boolean inferredSafe = isInferredSafe(distance, duration, exhalation);
+			boolean derivedSafe = isDerivedSafe(distance, duration, exhalation);
+			System.out.println(distance + "," + duration + "," + exhalation + "," + derivedSafe + "," + inferredSafe);
+			if (derivedSafe == inferredSafe) {
+				correct ++;
+			}
+		}
+		return correct;
+	}
+}
+]]></snapshot>
+  </Command>
+  <Command __id="114" _type="PauseCommand" date="Sun Sep 18 14:52:40 EDT 2022" range="5s-10s" starttimestamp="1663526514967" timestamp="645820">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[7269]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="115" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:52:41 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="646102" />
+  <Command __id="113" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:52:40 EDT 2022" docASTNodeCount="60" docActiveCodeLength="421" docExpressionCount="32" docLength="421" projectName="A02" starttimestamp="1663526514967" timestamp="645820">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/Factory/ViewFactory.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package ass2.Factory;
+
+import ass2.View.GeneralView;
+import ass2.View.SocialDistanceView;
+
+public class ViewFactory {
+	static GeneralView socialDistanceView;
+	
+	public static GeneralView getSingleton() {
+		if (socialDistanceView == null) {
+			socialDistanceView = new SocialDistanceView();
+		}
+		return socialDistanceView;
+	}
+	
+	public static void setSingleton(GeneralView newView) {
+		socialDistanceView = newView;
+	}
+}
+]]></snapshot>
+  </Command>
+  <Command __id="117" _type="PauseCommand" date="Sun Sep 18 14:52:45 EDT 2022" range="2s-5s" starttimestamp="1663526514967" timestamp="650108">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[4006]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="118" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:52:45 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="650394" />
+  <Command __id="116" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:52:45 EDT 2022" docASTNodeCount="31" docActiveCodeLength="270" docExpressionCount="20" docLength="270" projectName="A02" starttimestamp="1663526514967" timestamp="650108">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/Models/InterpolatingModel.java]]></filePath>
+    <diff><![CDATA[Diff(EQUAL,"package ass2.Models;import ass2.BasicSocialDistanceUtility;public class InterpolatingModel extends AbstractModel{	@Override	public boolean isSafe() {		return BasicSocialDistanceUtility.isInterpolatedSafe(getDistance(), getDuration(), getExhalationLevel());	}}")]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="120" _type="PauseCommand" date="Sun Sep 18 14:52:47 EDT 2022" range="1s-2s" starttimestamp="1663526514967" timestamp="652075">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[1681]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="121" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:52:47 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="652393" />
+  <Command __id="119" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:52:47 EDT 2022" docASTNodeCount="43" docActiveCodeLength="336" docExpressionCount="30" docLength="336" projectName="A02" starttimestamp="1663526514967" timestamp="652075">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/Models/BasicModel.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package ass2.Models;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+
+import ass2.BasicSocialDistanceUtility;
+
+public class BasicModel extends AbstractModel{
+
+	@Override
+	public boolean isSafe() {
+		return BasicSocialDistanceUtility.isGivenSafe(getDistance(), getDuration(), getExhalationLevel());
+	}
+}
+]]></snapshot>
+  </Command>
+  <Command __id="123" _type="PauseCommand" date="Sun Sep 18 14:52:48 EDT 2022" range="1s-2s" starttimestamp="1663526514967" timestamp="653444">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[1051]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="124" _type="MoveCaretCommand" caretOffset="483" date="Sun Sep 18 14:52:48 EDT 2022" docOffset="524" starttimestamp="1663526514967" timestamp="653728" />
+  <Command __id="122" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:52:48 EDT 2022" docASTNodeCount="274" docActiveCodeLength="1725" docExpressionCount="172" docLength="1725" projectName="A02" starttimestamp="1663526514967" timestamp="653444">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/Models/AbstractModel.java]]></filePath>
+    <diff><![CDATA[Diff(EQUAL,"package ass2.Models;import java.beans.PropertyChangeListener;import java.beans.PropertyChangeSupport;public abstract class AbstractModel implements SafeModel{	protected Integer distance;	protected Integer duration;	protected Integer exhalation;	protected Boolean safe;	PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);		public AbstractModel() {		distance = null;		duration = null;		exhalation = null;		safe = null;	}		@Override	public int getDistance() {		return distance;	}		@Override	public int getDuration() {		return duration;	}		@Override	public int getExhalationLevel() {		return exhalation;	}		@Override	public void setValues(int aDistance, int aDuration, int aExhalation) {		Integer preDistance = this.distance;		Integer preDuration = this.duration;		Integer preExhalation = this.exhalation;		Boolean preSafe = this.safe;		this.distance = Integer.valueOf(aDistance);		this.duration = Integer.valueOf(aDuration);		this.exhalation = Integer.valueOf(aExhalation);		this.safe = Boolean.valueOf(isSafe());		propertyChangeSupport.firePropertyChange(DISTANCE, (Integer)preDistance, (Integer)distance);		propertyChangeSupport.firePropertyChange(DURATION, (Integer)preDuration, (Integer)duration);		propertyChangeSupport.firePropertyChange(EXHALATIONLEVEL, (Integer)preExhalation, (Integer)exhalation);		propertyChangeSupport.firePropertyChange(SAFE, preSafe, safe);		resetValues();	}		private void resetValues() {		distance = null;		duration = null;		exhalation = null;		safe = null;	}		@Override	public void addPropertyChangeListener(PropertyChangeListener aListener) {		propertyChangeSupport.addPropertyChangeListener(aListener);	}}")]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="126" _type="PauseCommand" date="Sun Sep 18 14:53:00 EDT 2022" range="10s-20s" starttimestamp="1663526514967" timestamp="665049">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[11321]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="127" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:53:00 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="665330" />
+  <Command __id="125" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:53:00 EDT 2022" docASTNodeCount="31" docActiveCodeLength="260" docExpressionCount="20" docLength="260" projectName="A02" starttimestamp="1663526514967" timestamp="665049">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/Models/DerivingModel.java]]></filePath>
+    <diff><![CDATA[Diff(EQUAL,"package ass2.Models;import ass2.BasicSocialDistanceUtility;public class DerivingModel extends AbstractModel{	@Override	public boolean isSafe() {		return BasicSocialDistanceUtility.isDerivedSafe(getDistance(), getDuration(), getExhalationLevel());	}}")]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="129" _type="PauseCommand" date="Sun Sep 18 14:53:10 EDT 2022" range="10s-20s" starttimestamp="1663526514967" timestamp="675425">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[10094]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="130" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:53:10 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="675718" />
+  <Command __id="128" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:53:10 EDT 2022" docASTNodeCount="31" docActiveCodeLength="270" docExpressionCount="20" docLength="270" projectName="A02" starttimestamp="1663526514967" timestamp="675424">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/Models/InterpolatingModel.java]]></filePath>
+    <diff><![CDATA[Diff(EQUAL,"package ass2.Models;import ass2.BasicSocialDistanceUtility;public class InterpolatingModel extends AbstractModel{	@Override	public boolean isSafe() {		return BasicSocialDistanceUtility.isInterpolatedSafe(getDistance(), getDuration(), getExhalationLevel());	}}")]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="132" _type="PauseCommand" date="Sun Sep 18 14:53:13 EDT 2022" range="2s-5s" starttimestamp="1663526514967" timestamp="678134">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[2416]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="133" _type="MoveCaretCommand" caretOffset="483" date="Sun Sep 18 14:53:13 EDT 2022" docOffset="524" starttimestamp="1663526514967" timestamp="678415" />
+  <Command __id="131" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:53:13 EDT 2022" docASTNodeCount="274" docActiveCodeLength="1725" docExpressionCount="172" docLength="1725" projectName="A02" starttimestamp="1663526514967" timestamp="678134">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/Models/AbstractModel.java]]></filePath>
+    <diff><![CDATA[Diff(EQUAL,"package ass2.Models;import java.beans.PropertyChangeListener;import java.beans.PropertyChangeSupport;public abstract class AbstractModel implements SafeModel{	protected Integer distance;	protected Integer duration;	protected Integer exhalation;	protected Boolean safe;	PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);		public AbstractModel() {		distance = null;		duration = null;		exhalation = null;		safe = null;	}		@Override	public int getDistance() {		return distance;	}		@Override	public int getDuration() {		return duration;	}		@Override	public int getExhalationLevel() {		return exhalation;	}		@Override	public void setValues(int aDistance, int aDuration, int aExhalation) {		Integer preDistance = this.distance;		Integer preDuration = this.duration;		Integer preExhalation = this.exhalation;		Boolean preSafe = this.safe;		this.distance = Integer.valueOf(aDistance);		this.duration = Integer.valueOf(aDuration);		this.exhalation = Integer.valueOf(aExhalation);		this.safe = Boolean.valueOf(isSafe());		propertyChangeSupport.firePropertyChange(DISTANCE, (Integer)preDistance, (Integer)distance);		propertyChangeSupport.firePropertyChange(DURATION, (Integer)preDuration, (Integer)duration);		propertyChangeSupport.firePropertyChange(EXHALATIONLEVEL, (Integer)preExhalation, (Integer)exhalation);		propertyChangeSupport.firePropertyChange(SAFE, preSafe, safe);		resetValues();	}		private void resetValues() {		distance = null;		duration = null;		exhalation = null;		safe = null;	}		@Override	public void addPropertyChangeListener(PropertyChangeListener aListener) {		propertyChangeSupport.addPropertyChangeListener(aListener);	}}")]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="135" _type="PauseCommand" date="Sun Sep 18 14:53:24 EDT 2022" range="10s-20s" starttimestamp="1663526514967" timestamp="689190">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[10775]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="136" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:53:24 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="689505" />
+  <Command __id="134" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:53:24 EDT 2022" docASTNodeCount="83" docActiveCodeLength="504" docExpressionCount="58" docLength="504" projectName="A02" starttimestamp="1663526514967" timestamp="689190">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/View/SocialDistanceView.java]]></filePath>
+    <diff><![CDATA[Diff(EQUAL,"package ass2.View;import java.beans.PropertyChangeEvent;import java.beans.PropertyChangeListener;import ass2.Models.SafeModel;public class SocialDistanceView implements GeneralView{	public SocialDistanceView() {			}		@Override	public void propertyChange(PropertyChangeEvent event) {		System.out.println(event);		if (SafeModel.SAFE == event.getPropertyName()) {			Boolean isSafe = (Boolean) event.getNewValue();			System.out.println(String.format(isSafe ? "Safe." : "Not Safe!"));		}	}}")]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="138" _type="PauseCommand" date="Sun Sep 18 14:53:53 EDT 2022" range="20s-30s" starttimestamp="1663526514967" timestamp="718195">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[28690]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="139" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:53:53 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="718493" />
+  <Command __id="137" _type="DiffBasedFileOpenCommand" date="Sun Sep 18 14:53:53 EDT 2022" docASTNodeCount="129" docActiveCodeLength="845" docExpressionCount="79" docLength="845" projectName="A02" starttimestamp="1663526514967" timestamp="718195">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/SocialDistanceController.java]]></filePath>
+    <diff><![CDATA[Diff(EQUAL,"package ass2;import java.util.Scanner;import ass2.Factory.ModelFactory;public class SocialDistanceController {	public SocialDistanceController() {	}		public void processInput() {		Scanner scanner = new Scanner(System.in);		System.out.println("Please enter data regarding your guest interaction.");		for (;;) {			int distance = getNextInt("Distance", scanner);			if (distance < 0) {				break;			}			int duration = getNextInt("Duration?", scanner);			if (duration < 0) {				break;			}			int exhalation = getNextInt("Exhalation Level?", scanner);			if (exhalation < 0) {				break;			}			ModelFactory.getSingleton().setValues(distance, duration, exhalation);		}		System.out.println("Quitting");	}		private int getNextInt(String prompt, Scanner scanner) {		System.out.println(prompt);		return scanner.nextInt();	}}")]]></diff>
+    <snapshot><![CDATA[null]]></snapshot>
+  </Command>
+  <Command __id="141" _type="PauseCommand" date="Sun Sep 18 14:55:34 EDT 2022" range="1m-2m" starttimestamp="1663526514967" timestamp="819371">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[100878]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="142" _type="MoveCaretCommand" caretOffset="0" date="Sun Sep 18 14:55:34 EDT 2022" docOffset="0" starttimestamp="1663526514967" timestamp="819775" />
+  <Command __id="144" _type="PauseCommand" date="Sun Sep 18 14:59:09 EDT 2022" range="2m-5m" starttimestamp="1663526514967" timestamp="1034403">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[214628]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="143" _type="ShellCommand" date="Sun Sep 18 14:59:09 EDT 2022" starttimestamp="1663526514967" timestamp="1034403" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="146" _type="PauseCommand" date="Sun Sep 18 15:16:34 EDT 2022" range="10m-20m" starttimestamp="1663526514967" timestamp="2079565">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[1045161]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="145" _type="ShellCommand" date="Sun Sep 18 15:16:34 EDT 2022" starttimestamp="1663526514967" timestamp="2079564" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="148" _type="PauseCommand" date="Sun Sep 18 15:19:34 EDT 2022" range="2m-5m" starttimestamp="1663526514967" timestamp="2259957">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[180393]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="147" _type="ShellCommand" date="Sun Sep 18 15:19:34 EDT 2022" starttimestamp="1663526514967" timestamp="2259957" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="150" _type="PauseCommand" date="Sun Sep 18 15:19:46 EDT 2022" range="10s-20s" starttimestamp="1663526514967" timestamp="2271518">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[11561]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="149" _type="ShellCommand" date="Sun Sep 18 15:19:46 EDT 2022" starttimestamp="1663526514967" timestamp="2271518" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="152" _type="PauseCommand" date="Sun Sep 18 15:22:01 EDT 2022" range="2m-5m" starttimestamp="1663526514967" timestamp="2406092">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[134574]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="151" _type="ShellCommand" date="Sun Sep 18 15:22:01 EDT 2022" starttimestamp="1663526514967" timestamp="2406092" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="154" _type="PauseCommand" date="Sun Sep 18 15:25:08 EDT 2022" range="2m-5m" starttimestamp="1663526514967" timestamp="2593956">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[187864]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="153" _type="ShellCommand" date="Sun Sep 18 15:25:08 EDT 2022" starttimestamp="1663526514967" timestamp="2593956" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="156" _type="PauseCommand" date="Sun Sep 18 15:25:12 EDT 2022" range="2s-5s" starttimestamp="1663526514967" timestamp="2597523">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[3567]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="155" _type="ShellCommand" date="Sun Sep 18 15:25:12 EDT 2022" starttimestamp="1663526514967" timestamp="2597523" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="158" _type="PauseCommand" date="Sun Sep 18 15:25:14 EDT 2022" range="2s-5s" starttimestamp="1663526514967" timestamp="2599635">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[2111]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="157" _type="ShellCommand" date="Sun Sep 18 15:25:14 EDT 2022" starttimestamp="1663526514967" timestamp="2599634" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="160" _type="PauseCommand" date="Sun Sep 18 15:26:02 EDT 2022" range="30s-1m" starttimestamp="1663526514967" timestamp="2647598">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[47964]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="159" _type="ShellCommand" date="Sun Sep 18 15:26:02 EDT 2022" starttimestamp="1663526514967" timestamp="2647598" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="161" _type="ShellCommand" date="Sun Sep 18 15:26:02 EDT 2022" starttimestamp="1663526514967" timestamp="2647600" type="ECLIPSE_MINIMIZED" />
+  <Command __id="163" _type="PauseCommand" date="Sun Sep 18 15:41:55 EDT 2022" range="10m-20m" starttimestamp="1663526514967" timestamp="3600203">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[952602]]></pause>
+    <nextType><![CDATA[Other]]></nextType>
+    <next><![CDATA[BalloonCommand]]></next>
+  </Command>

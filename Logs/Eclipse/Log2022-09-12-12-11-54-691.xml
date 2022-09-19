@@ -1,0 +1,87 @@
+<Events startTimestamp="1662999114691" logVersion="1.0.0.202208150223">
+  <Command __id="4" _type="EclipseCommand" commandID="" date="Mon Sep 12 12:12:10 EDT 2022" starttimestamp="1662999114691" timestamp="15633" />
+  <Command __id="6" _type="EclipseCommand" commandID="" date="Mon Sep 12 12:12:10 EDT 2022" starttimestamp="1662999114691" timestamp="15746" />
+  <Command __id="0" _type="DiffBasedFileOpenCommand" date="Mon Sep 12 12:11:54 EDT 2022" docASTNodeCount="77" docActiveCodeLength="601" docExpressionCount="55" docLength="993" projectName="A02" starttimestamp="1662999114691" timestamp="86">
+    <filePath><![CDATA[/Users/finn/eclipse-workspace/A02/A02/src/ass2/RunF22A02Tests.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package ass2;
+import grader.basics.execution.BasicProjectExecution;
+import gradingTools.comp524f22.assignment2.F22Assignment2Suite;
+import trace.grader.basics.GraderBasicsTraceUtility;
+import util.trace.Tracer;
+
+public class RunF22A02Tests {
+	public static void main(String[] args) {
+		// if you set this to false, grader steps will not be traced
+		GraderBasicsTraceUtility.setTracerShowInfo(true);	
+		// if you set this to false, all grader steps will be traced,
+		// not just the ones that failed		
+		GraderBasicsTraceUtility.setBufferTracedMessages(true);
+		// Change this number if a test trace gets longer than 600 and is clipped
+		GraderBasicsTraceUtility.setMaxPrintedTraces(600);
+		// Change this number if all traces together are longer than 2000
+		GraderBasicsTraceUtility.setMaxTraces(2000);
+		// Change this number if your process times out prematurely
+		BasicProjectExecution.setProcessTimeOut(5);
+		// You need to always call such a method
+		F22Assignment2Suite.main(args);
+	}
+}
+]]></snapshot>
+  </Command>
+  <Command __id="8" _type="PauseCommand" date="Mon Sep 12 12:12:20 EDT 2022" range="5s-10s" starttimestamp="1662999114691" timestamp="25515">
+    <prevType><![CDATA[Other]]></prevType>
+    <prev><![CDATA[EclipseCommand]]></prev>
+    <pause><![CDATA[9769]]></pause>
+    <nextType><![CDATA[Open File]]></nextType>
+    <next><![CDATA[DiffBasedFileOpenCommand]]></next>
+  </Command>
+  <Command __id="9" _type="MoveCaretCommand" caretOffset="409" date="Mon Sep 12 12:12:20 EDT 2022" docOffset="480" starttimestamp="1662999114691" timestamp="25708" />
+  <Command __id="11" _type="PauseCommand" date="Mon Sep 12 12:12:30 EDT 2022" range="10s-20s" starttimestamp="1662999114691" timestamp="36299">
+    <prevType><![CDATA[Move Caret]]></prevType>
+    <prev><![CDATA[MoveCaretCommand]]></prev>
+    <pause><![CDATA[10591]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="10" _type="ShellCommand" date="Mon Sep 12 12:12:30 EDT 2022" starttimestamp="1662999114691" timestamp="36299" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="13" _type="PauseCommand" date="Mon Sep 12 12:12:38 EDT 2022" range="5s-10s" starttimestamp="1662999114691" timestamp="43591">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[7292]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="12" _type="ShellCommand" date="Mon Sep 12 12:12:38 EDT 2022" starttimestamp="1662999114691" timestamp="43591" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="15" _type="PauseCommand" date="Mon Sep 12 12:12:40 EDT 2022" range="2s-5s" starttimestamp="1662999114691" timestamp="45666">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[2075]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="14" _type="ShellCommand" date="Mon Sep 12 12:12:40 EDT 2022" starttimestamp="1662999114691" timestamp="45666" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="17" _type="PauseCommand" date="Mon Sep 12 12:12:52 EDT 2022" range="10s-20s" starttimestamp="1662999114691" timestamp="57406">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[11740]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="16" _type="ShellCommand" date="Mon Sep 12 12:12:52 EDT 2022" starttimestamp="1662999114691" timestamp="57406" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="19" _type="PauseCommand" date="Mon Sep 12 12:12:53 EDT 2022" range="1s-2s" starttimestamp="1662999114691" timestamp="59298">
+    <prevType><![CDATA[Gained Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[1892]]></pause>
+    <nextType><![CDATA[Lost Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+  <Command __id="18" _type="ShellCommand" date="Mon Sep 12 12:12:53 EDT 2022" starttimestamp="1662999114691" timestamp="59298" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="21" _type="PauseCommand" date="Mon Sep 12 12:15:51 EDT 2022" range="2m-5m" starttimestamp="1662999114691" timestamp="236634">
+    <prevType><![CDATA[Lost Focus]]></prevType>
+    <prev><![CDATA[ShellCommand]]></prev>
+    <pause><![CDATA[177336]]></pause>
+    <nextType><![CDATA[Gained Focus]]></nextType>
+    <next><![CDATA[ShellCommand]]></next>
+  </Command>
+</Events>

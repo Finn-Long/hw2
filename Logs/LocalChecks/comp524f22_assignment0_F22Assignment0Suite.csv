@@ -1,0 +1,7 @@
+#,Time,%Passes,Change,Test,Pass,Partial,Fail,Untested
+0,Tue Sep 06 12:11:34 EDT 2022,0,0,GreetingMainProvided, , ,GreetingClassRegistryProvided+ GreetingMainProvided+ ,A01MnemonicNames A01NoCheckstyleWarnings GreetingRun ,
+0,Tue Sep 06 12:11:34 EDT 2022,0,0,GreetingMainProvided, , ,GreetingClassRegistryProvided+ GreetingMainProvided+ ,A01MnemonicNames A01NoCheckstyleWarnings GreetingRun ,
+1,Tue Sep 06 12:11:35 EDT 2022,0,0,A01Style, , ,A01MnemonicNames+ A01NoCheckstyleWarnings+ GreetingClassRegistryProvided GreetingMainProvided ,GreetingRun ,
+1,Tue Sep 06 12:11:35 EDT 2022,0,0,A01Style, , ,A01MnemonicNames+ A01NoCheckstyleWarnings+ GreetingClassRegistryProvided GreetingMainProvided ,GreetingRun ,
+2,Tue Sep 06 12:11:37 EDT 2022,0,0,GreetingRun, , ,A01MnemonicNames A01NoCheckstyleWarnings GreetingClassRegistryProvided GreetingMainProvided GreetingRun+ , ,
+2,Tue Sep 06 12:11:37 EDT 2022,0,0,GreetingRun, , ,A01MnemonicNames A01NoCheckstyleWarnings GreetingClassRegistryProvided GreetingMainProvided GreetingRun+ , ,

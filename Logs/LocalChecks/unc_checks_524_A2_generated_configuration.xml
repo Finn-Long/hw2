@@ -1,0 +1,1241 @@
+	<module name="ClassDefined">
+		<property name="severity" value="info"/>
+		<property name="expectedTypes" value="
+			@BasicSocialDistanceUtility,
+			@SocialDistancDerivingModel,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel,
+			@SocialDistancInferringModel,
+			@SocialDistanceBasicModel,
+			@SocialDistanceClassifierFactory,
+			@SocialDistanceController,
+			@SocialDistanceControllerFactory,
+			@SocialDistanceInterpolatingModel,
+			@SocialDistanceMVCBasicMain,
+			@SocialDistanceMVCDerivingMain,
+			@SocialDistanceMVCInferringMain,
+			@SocialDistanceMVCInterpolatingMain,
+			@SocialDistanceModelFactory,
+			@SocialDistanceUilityTesterMain,
+			@SocialDistanceView,
+			@SocialDistanceViewFactory,
+		"/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceMVCBasicMain"/>
+		<property name="expectedSignatures" value="
+			main:String[]->.*,
+		"/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceMVCBasicMain"/>
+		<property name="expectedSignatures" value="
+			main:String[]->.*,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceMVCBasicMain"/>
+		<property name="expectedCalls" value="
+			@BasicSocialDistanceUtility!lowInterpolationHelper:int;int;int;int->int,
+			@BasicSocialDistanceUtility!isInterpolatedSafe:int;int;int->boolean,
+			java.beans.PropertyChangeSupport!firePropertyChange:*->.*,
+			@BasicSocialDistanceUtility!isGivenSafe:int;int;int->boolean,
+			@SocialDistanceController!processInput:->void,
+			java.lang.Boolean!valueOf:*->.*,
+			java.lang.Integer!valueOf:*->.*,
+			@BasicSocialDistanceUtility!isSaferThan:int;int;int;int;int;int->boolean,
+			@SocialDistanceBasicModel!isSafe:*->.*,
+			@SocialDistanceModelFactory!getSingleton:->@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel,
+			@SocialDistanceViewFactory!getSingleton:->@SocialDistanceView,
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!addPropertyChangeListener:*->.*,
+			@SocialDistanceModelFactory!setSingleton:@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel->void,
+			java.util.Scanner!nextInt:->int,
+			@BasicSocialDistanceUtility!highInterpolationHelper:int;int;int;int->int,
+			@SocialDistancInferringModel!isSafe:*->.*,
+			java.beans.PropertyChangeSupport!addPropertyChangeListener:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!setValues:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			java.io.PrintStream!println:*->.*,
+			@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@BasicSocialDistanceUtility!isDerivedSafe:int;int;int->boolean,
+			@SocialDistancDerivingModel!isSafe:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			@SocialDistanceControllerFactory!getSingleton:->@SocialDistanceController,
+			@BasicSocialDistanceUtility!isInferredSafe:int;int;int->boolean,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceMVCBasicMain"/>
+		<property name="expectedCalls" value="
+			@BasicSocialDistanceUtility!lowInterpolationHelper:int;int;int;int->int,
+			@BasicSocialDistanceUtility!isInterpolatedSafe:int;int;int->boolean,
+			java.beans.PropertyChangeSupport!firePropertyChange:*->.*,
+			@BasicSocialDistanceUtility!isGivenSafe:int;int;int->boolean,
+			@SocialDistanceController!processInput:->void,
+			java.lang.Boolean!valueOf:*->.*,
+			java.lang.Integer!valueOf:*->.*,
+			@BasicSocialDistanceUtility!isSaferThan:int;int;int;int;int;int->boolean,
+			@SocialDistanceBasicModel!isSafe:*->.*,
+			@SocialDistanceModelFactory!getSingleton:->@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel,
+			@SocialDistanceViewFactory!getSingleton:->@SocialDistanceView,
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!addPropertyChangeListener:*->.*,
+			@SocialDistanceModelFactory!setSingleton:@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel->void,
+			java.util.Scanner!nextInt:->int,
+			@BasicSocialDistanceUtility!highInterpolationHelper:int;int;int;int->int,
+			@SocialDistancInferringModel!isSafe:*->.*,
+			java.beans.PropertyChangeSupport!addPropertyChangeListener:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!setValues:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			java.io.PrintStream!println:*->.*,
+			@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@BasicSocialDistanceUtility!isDerivedSafe:int;int;int->boolean,
+			@SocialDistancDerivingModel!isSafe:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			@SocialDistanceControllerFactory!getSingleton:->@SocialDistanceController,
+			@BasicSocialDistanceUtility!isInferredSafe:int;int;int->boolean,
+		"/>
+	</module>
+	<module name="MethodAccessesGlobal">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceMVCBasicMain"/>
+		<property name="expectedReferences" value="
+			main:String[]->.*#.*MAX_VALUE.*,
+		"/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@BasicSocialDistanceUtility"/>
+		<property name="expectedSignatures" value="
+			printGivenAndGeneratedCombinationsInferredSafety:->void,
+			printGeneratedCombinationDerivedSafety:String->void,
+			generateSafeDistancesAndDurations:int->java.util.List,
+			highInterpolationHelper:int;int;int;int->int,
+			printGivenAndGeneratedCombinationsDerivedSafety:String->void,
+			isSaferThan:int;int;int;int;int;int->boolean,
+			isInterpolatedSafe:int->boolean,
+			printHelper:int;int;int;boolean->void,
+			printGivenAndGeneratedCombinationsDerivedSafety:->void,
+			lowInterpolationHelper:int;int;int;int->int,
+			isGivenSafe:int;int;int->boolean,
+			isInterpolatedSafe:int;int->boolean,
+			isDerivedSafe:int;int;int->boolean,
+			printSafeDistancesAndDurations:int->void,
+			isInferredSafe:int;int;int->boolean,
+			printGeneratedCombinationDerivedSafety:->void,
+			generateValuesHelper:->int[],
+			compareSafetyComputations:->int,
+			isInterpolatedSafe:int;int;int->boolean,
+		"/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@BasicSocialDistanceUtility"/>
+		<property name="expectedSignatures" value="
+			printGivenAndGeneratedCombinationsInferredSafety:->void,
+			printGeneratedCombinationDerivedSafety:String->void,
+			generateSafeDistancesAndDurations:int->java.util.List,
+			highInterpolationHelper:int;int;int;int->int,
+			printGivenAndGeneratedCombinationsDerivedSafety:String->void,
+			isSaferThan:int;int;int;int;int;int->boolean,
+			isInterpolatedSafe:int->boolean,
+			printHelper:int;int;int;boolean->void,
+			printGivenAndGeneratedCombinationsDerivedSafety:->void,
+			lowInterpolationHelper:int;int;int;int->int,
+			isGivenSafe:int;int;int->boolean,
+			isInterpolatedSafe:int;int->boolean,
+			isDerivedSafe:int;int;int->boolean,
+			printSafeDistancesAndDurations:int->void,
+			isInferredSafe:int;int;int->boolean,
+			printGeneratedCombinationDerivedSafety:->void,
+			generateValuesHelper:->int[],
+			compareSafetyComputations:->int,
+			isInterpolatedSafe:int;int;int->boolean,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@BasicSocialDistanceUtility"/>
+		<property name="expectedCalls" value="
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			java.io.PrintStream!println:*->.*,
+			java.util.ArrayList!add:Object->boolean,
+			java.io.PrintStream!println:->void,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			java.util.List!size:->int,
+			java.io.PrintStream!print:*->.*,
+			java.lang.Math!random:->double,
+			java.util.List!get:int->Object,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@BasicSocialDistanceUtility"/>
+		<property name="expectedCalls" value="
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			java.io.PrintStream!println:*->.*,
+			java.util.ArrayList!add:Object->boolean,
+			java.io.PrintStream!println:->void,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			java.util.List!size:->int,
+			java.io.PrintStream!print:*->.*,
+			java.lang.Math!random:->double,
+			java.util.List!get:int->Object,
+		"/>
+	</module>
+	<module name="MethodAccessesGlobal">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@BasicSocialDistanceUtility"/>
+		<property name="expectedReferences" value="
+			isInterpolatedSafe:int;int;int->boolean#.*MAX_VALUE.*,
+		"/>
+	</module>
+	<module name="MethodAccessesGlobal">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@BasicSocialDistanceUtility"/>
+		<property name="expectedReferences" value="
+			isInterpolatedSafe:int;int->boolean#.*MAX_VALUE.*,
+		"/>
+	</module>
+	<module name="MethodAccessesGlobal">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@BasicSocialDistanceUtility"/>
+		<property name="expectedReferences" value="
+			isInterpolatedSafe:int->boolean#.*MAX_VALUE.*,
+		"/>
+	</module>
+	<module name="MethodAccessesGlobal">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@BasicSocialDistanceUtility"/>
+		<property name="expectedReferences" value="
+			generateSafeDistancesAndDurations:int->java.util.List#.*MAX_VALUE.*,
+		"/>
+	</module>
+	<module name="MethodAccessesGlobal">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@BasicSocialDistanceUtility"/>
+		<property name="expectedReferences" value="
+			printSafeDistancesAndDurations:int->void#.*MAX_VALUE.*,
+		"/>
+	</module>
+	<module name="MethodAccessesGlobal">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@BasicSocialDistanceUtility"/>
+		<property name="expectedReferences" value="
+			highInterpolationHelper:int;int;int;int->int#.*MAX_VALUE.*,
+		"/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceMVCDerivingMain"/>
+		<property name="expectedSignatures" value="
+			main:String[]->void,
+		"/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceMVCDerivingMain"/>
+		<property name="expectedSignatures" value="
+			main:String[]->void,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceMVCDerivingMain"/>
+		<property name="expectedCalls" value="
+			@BasicSocialDistanceUtility!lowInterpolationHelper:int;int;int;int->int,
+			@BasicSocialDistanceUtility!isInterpolatedSafe:int;int;int->boolean,
+			java.beans.PropertyChangeSupport!firePropertyChange:*->.*,
+			@BasicSocialDistanceUtility!isGivenSafe:int;int;int->boolean,
+			@SocialDistanceController!processInput:->void,
+			java.lang.Boolean!valueOf:*->.*,
+			java.lang.Integer!valueOf:*->.*,
+			@BasicSocialDistanceUtility!isSaferThan:int;int;int;int;int;int->boolean,
+			@SocialDistanceBasicModel!isSafe:*->.*,
+			@SocialDistanceModelFactory!getSingleton:->@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel,
+			@SocialDistanceViewFactory!getSingleton:->@SocialDistanceView,
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!addPropertyChangeListener:*->.*,
+			@SocialDistanceModelFactory!setSingleton:@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel->void,
+			java.util.Scanner!nextInt:->int,
+			@BasicSocialDistanceUtility!highInterpolationHelper:int;int;int;int->int,
+			@SocialDistancInferringModel!isSafe:*->.*,
+			java.beans.PropertyChangeSupport!addPropertyChangeListener:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!setValues:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			java.io.PrintStream!println:*->.*,
+			@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@BasicSocialDistanceUtility!isDerivedSafe:int;int;int->boolean,
+			@SocialDistancDerivingModel!isSafe:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			@SocialDistanceControllerFactory!getSingleton:->@SocialDistanceController,
+			@BasicSocialDistanceUtility!isInferredSafe:int;int;int->boolean,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceMVCDerivingMain"/>
+		<property name="expectedCalls" value="
+			@BasicSocialDistanceUtility!lowInterpolationHelper:int;int;int;int->int,
+			@BasicSocialDistanceUtility!isInterpolatedSafe:int;int;int->boolean,
+			java.beans.PropertyChangeSupport!firePropertyChange:*->.*,
+			@BasicSocialDistanceUtility!isGivenSafe:int;int;int->boolean,
+			@SocialDistanceController!processInput:->void,
+			java.lang.Boolean!valueOf:*->.*,
+			java.lang.Integer!valueOf:*->.*,
+			@BasicSocialDistanceUtility!isSaferThan:int;int;int;int;int;int->boolean,
+			@SocialDistanceBasicModel!isSafe:*->.*,
+			@SocialDistanceModelFactory!getSingleton:->@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel,
+			@SocialDistanceViewFactory!getSingleton:->@SocialDistanceView,
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!addPropertyChangeListener:*->.*,
+			@SocialDistanceModelFactory!setSingleton:@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel->void,
+			java.util.Scanner!nextInt:->int,
+			@BasicSocialDistanceUtility!highInterpolationHelper:int;int;int;int->int,
+			@SocialDistancInferringModel!isSafe:*->.*,
+			java.beans.PropertyChangeSupport!addPropertyChangeListener:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!setValues:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			java.io.PrintStream!println:*->.*,
+			@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@BasicSocialDistanceUtility!isDerivedSafe:int;int;int->boolean,
+			@SocialDistancDerivingModel!isSafe:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			@SocialDistanceControllerFactory!getSingleton:->@SocialDistanceController,
+			@BasicSocialDistanceUtility!isInferredSafe:int;int;int->boolean,
+		"/>
+	</module>
+	<module name="MethodAccessesGlobal">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceMVCDerivingMain"/>
+		<property name="expectedReferences" value="
+			main:String[]->void#.*MAX_VALUE.*,
+		"/>
+	</module>
+	<module name="ExpectedGetters">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceControllerFactory"/>
+		<property name="expectedProperties" value="
+			Singleton:@SocialDistanceController,
+		"/>
+	</module>
+	<module name="ExpectedGetters">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceControllerFactory"/>
+		<property name="expectedProperties" value="
+			Singleton:@SocialDistanceController,
+		"/>
+	</module>
+	<module name="ExpectedSetters">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceControllerFactory"/>
+		<property name="expectedProperties" value="
+			Singleton:@SocialDistanceController,
+		"/>
+	</module>
+	<module name="ExpectedSetters">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceControllerFactory"/>
+		<property name="expectedProperties" value="
+			Singleton:@SocialDistanceController,
+		"/>
+	</module>
+	<module name="ExpectedGetters">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceModelFactory"/>
+		<property name="expectedProperties" value="
+			Singleton:@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel,
+		"/>
+	</module>
+	<module name="ExpectedGetters">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceModelFactory"/>
+		<property name="expectedProperties" value="
+			Singleton:@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel,
+		"/>
+	</module>
+	<module name="ExpectedSetters">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceModelFactory"/>
+		<property name="expectedProperties" value="
+			Singleton:@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel,
+		"/>
+	</module>
+	<module name="ExpectedSetters">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceModelFactory"/>
+		<property name="expectedProperties" value="
+			Singleton:@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel,
+		"/>
+	</module>
+	<module name="ExpectedGetters">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceClassifierFactory"/>
+		<property name="expectedProperties" value="
+			Singleton:weka.classifiers.Classifier,
+		"/>
+	</module>
+	<module name="ExpectedGetters">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceClassifierFactory"/>
+		<property name="expectedProperties" value="
+			Singleton:weka.classifiers.Classifier,
+		"/>
+	</module>
+	<module name="ExpectedSetters">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceClassifierFactory"/>
+		<property name="expectedProperties" value="
+			Singleton:weka.classifiers.Classifier,
+		"/>
+	</module>
+	<module name="ExpectedSetters">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceClassifierFactory"/>
+		<property name="expectedProperties" value="
+			Singleton:weka.classifiers.Classifier,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceClassifierFactory"/>
+		<property name="expectedCalls" value="
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceClassifierFactory"/>
+		<property name="expectedCalls" value="
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+		"/>
+	</module>
+	<module name="ExpectedGetters">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceViewFactory"/>
+		<property name="expectedProperties" value="
+			Singleton:@SocialDistanceView,
+		"/>
+	</module>
+	<module name="ExpectedGetters">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceViewFactory"/>
+		<property name="expectedProperties" value="
+			Singleton:@SocialDistanceView,
+		"/>
+	</module>
+	<module name="ExpectedSetters">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceViewFactory"/>
+		<property name="expectedProperties" value="
+			Singleton:@SocialDistanceView,
+		"/>
+	</module>
+	<module name="ExpectedSetters">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceViewFactory"/>
+		<property name="expectedProperties" value="
+			Singleton:@SocialDistanceView,
+		"/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceMVCInterpolatingMain"/>
+		<property name="expectedSignatures" value="
+			main:String[]->void,
+		"/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceMVCInterpolatingMain"/>
+		<property name="expectedSignatures" value="
+			main:String[]->void,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceMVCInterpolatingMain"/>
+		<property name="expectedCalls" value="
+			@BasicSocialDistanceUtility!lowInterpolationHelper:int;int;int;int->int,
+			@BasicSocialDistanceUtility!isInterpolatedSafe:int;int;int->boolean,
+			java.beans.PropertyChangeSupport!firePropertyChange:*->.*,
+			@BasicSocialDistanceUtility!isGivenSafe:int;int;int->boolean,
+			@SocialDistanceController!processInput:->void,
+			java.lang.Boolean!valueOf:*->.*,
+			java.lang.Integer!valueOf:*->.*,
+			@BasicSocialDistanceUtility!isSaferThan:int;int;int;int;int;int->boolean,
+			@SocialDistanceBasicModel!isSafe:*->.*,
+			@SocialDistanceModelFactory!getSingleton:->@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel,
+			@SocialDistanceViewFactory!getSingleton:->@SocialDistanceView,
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!addPropertyChangeListener:*->.*,
+			@SocialDistanceModelFactory!setSingleton:@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel->void,
+			java.util.Scanner!nextInt:->int,
+			@BasicSocialDistanceUtility!highInterpolationHelper:int;int;int;int->int,
+			@SocialDistancInferringModel!isSafe:*->.*,
+			java.beans.PropertyChangeSupport!addPropertyChangeListener:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!setValues:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			java.io.PrintStream!println:*->.*,
+			@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@BasicSocialDistanceUtility!isDerivedSafe:int;int;int->boolean,
+			@SocialDistancDerivingModel!isSafe:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			@SocialDistanceControllerFactory!getSingleton:->@SocialDistanceController,
+			@BasicSocialDistanceUtility!isInferredSafe:int;int;int->boolean,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceMVCInterpolatingMain"/>
+		<property name="expectedCalls" value="
+			@BasicSocialDistanceUtility!lowInterpolationHelper:int;int;int;int->int,
+			@BasicSocialDistanceUtility!isInterpolatedSafe:int;int;int->boolean,
+			java.beans.PropertyChangeSupport!firePropertyChange:*->.*,
+			@BasicSocialDistanceUtility!isGivenSafe:int;int;int->boolean,
+			@SocialDistanceController!processInput:->void,
+			java.lang.Boolean!valueOf:*->.*,
+			java.lang.Integer!valueOf:*->.*,
+			@BasicSocialDistanceUtility!isSaferThan:int;int;int;int;int;int->boolean,
+			@SocialDistanceBasicModel!isSafe:*->.*,
+			@SocialDistanceModelFactory!getSingleton:->@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel,
+			@SocialDistanceViewFactory!getSingleton:->@SocialDistanceView,
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!addPropertyChangeListener:*->.*,
+			@SocialDistanceModelFactory!setSingleton:@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel->void,
+			java.util.Scanner!nextInt:->int,
+			@BasicSocialDistanceUtility!highInterpolationHelper:int;int;int;int->int,
+			@SocialDistancInferringModel!isSafe:*->.*,
+			java.beans.PropertyChangeSupport!addPropertyChangeListener:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!setValues:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			java.io.PrintStream!println:*->.*,
+			@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@BasicSocialDistanceUtility!isDerivedSafe:int;int;int->boolean,
+			@SocialDistancDerivingModel!isSafe:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			@SocialDistanceControllerFactory!getSingleton:->@SocialDistanceController,
+			@BasicSocialDistanceUtility!isInferredSafe:int;int;int->boolean,
+		"/>
+	</module>
+	<module name="MethodAccessesGlobal">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceMVCInterpolatingMain"/>
+		<property name="expectedReferences" value="
+			main:String[]->void#.*MAX_VALUE.*,
+		"/>
+	</module>
+	<module name="ExpectedGetters">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceBasicModel"/>
+		<property name="expectedProperties" value="
+			ExhalationLevel:int,
+			Duration:int,
+			Distance:int,
+		"/>
+	</module>
+	<module name="ExpectedGetters">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceBasicModel"/>
+		<property name="expectedProperties" value="
+			ExhalationLevel:int,
+			Duration:int,
+			Distance:int,
+		"/>
+	</module>
+	<module name="ExpectedSetters">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceBasicModel"/>
+		<property name="expectedProperties" value=""/>
+	</module>
+	<module name="ExpectedSetters">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceBasicModel"/>
+		<property name="expectedProperties" value=""/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceBasicModel"/>
+		<property name="expectedSignatures" value="
+			isSafe:->boolean,
+			setValues:int;int;int->void,
+			addPropertyChangeListener:java.beans.PropertyChangeListener->void,
+		"/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceBasicModel"/>
+		<property name="expectedSignatures" value="
+			isSafe:->boolean,
+			setValues:int;int;int->void,
+			addPropertyChangeListener:java.beans.PropertyChangeListener->void,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceBasicModel"/>
+		<property name="expectedCalls" value="
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			@BasicSocialDistanceUtility!isInterpolatedSafe:int;int;int->boolean,
+			@BasicSocialDistanceUtility!lowInterpolationHelper:int;int;int;int->int,
+			@BasicSocialDistanceUtility!isGivenSafe:int;int;int->boolean,
+			java.beans.PropertyChangeSupport!firePropertyChange:*->.*,
+			@BasicSocialDistanceUtility!highInterpolationHelper:int;int;int;int->int,
+			@SocialDistancInferringModel!isSafe:*->.*,
+			java.beans.PropertyChangeSupport!addPropertyChangeListener:*->.*,
+			java.lang.Boolean!valueOf:*->.*,
+			java.lang.Integer!valueOf:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@BasicSocialDistanceUtility!isSaferThan:int;int;int;int;int;int->boolean,
+			@BasicSocialDistanceUtility!isDerivedSafe:int;int;int->boolean,
+			@SocialDistancDerivingModel!isSafe:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			@BasicSocialDistanceUtility!isInferredSafe:int;int;int->boolean,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceBasicModel"/>
+		<property name="expectedCalls" value="
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			@BasicSocialDistanceUtility!isInterpolatedSafe:int;int;int->boolean,
+			@BasicSocialDistanceUtility!lowInterpolationHelper:int;int;int;int->int,
+			@BasicSocialDistanceUtility!isGivenSafe:int;int;int->boolean,
+			java.beans.PropertyChangeSupport!firePropertyChange:*->.*,
+			@BasicSocialDistanceUtility!highInterpolationHelper:int;int;int;int->int,
+			@SocialDistancInferringModel!isSafe:*->.*,
+			java.beans.PropertyChangeSupport!addPropertyChangeListener:*->.*,
+			java.lang.Boolean!valueOf:*->.*,
+			java.lang.Integer!valueOf:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@BasicSocialDistanceUtility!isSaferThan:int;int;int;int;int;int->boolean,
+			@BasicSocialDistanceUtility!isDerivedSafe:int;int;int->boolean,
+			@SocialDistancDerivingModel!isSafe:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			@BasicSocialDistanceUtility!isInferredSafe:int;int;int->boolean,
+		"/>
+	</module>
+	<module name="MethodAccessesGlobal">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceBasicModel"/>
+		<property name="expectedReferences" value="
+			setValues:int;int;int->void#.*MAX_VALUE.*,
+		"/>
+	</module>
+	<module name="ExpectedGetters">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistancDerivingModel"/>
+		<property name="expectedProperties" value="
+			ExhalationLevel:int,
+			Duration:int,
+			Distance:int,
+		"/>
+	</module>
+	<module name="ExpectedGetters">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistancDerivingModel"/>
+		<property name="expectedProperties" value="
+			ExhalationLevel:int,
+			Duration:int,
+			Distance:int,
+		"/>
+	</module>
+	<module name="ExpectedSetters">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistancDerivingModel"/>
+		<property name="expectedProperties" value=""/>
+	</module>
+	<module name="ExpectedSetters">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistancDerivingModel"/>
+		<property name="expectedProperties" value=""/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistancDerivingModel"/>
+		<property name="expectedSignatures" value="
+			isSafe:->boolean,
+			setValues:int;int;int->void,
+			addPropertyChangeListener:java.beans.PropertyChangeListener->void,
+		"/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistancDerivingModel"/>
+		<property name="expectedSignatures" value="
+			isSafe:->boolean,
+			setValues:int;int;int->void,
+			addPropertyChangeListener:java.beans.PropertyChangeListener->void,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistancDerivingModel"/>
+		<property name="expectedCalls" value="
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			@BasicSocialDistanceUtility!isInterpolatedSafe:int;int;int->boolean,
+			@BasicSocialDistanceUtility!lowInterpolationHelper:int;int;int;int->int,
+			java.beans.PropertyChangeSupport!firePropertyChange:*->.*,
+			@BasicSocialDistanceUtility!isGivenSafe:int;int;int->boolean,
+			@BasicSocialDistanceUtility!highInterpolationHelper:int;int;int;int->int,
+			@SocialDistancInferringModel!isSafe:*->.*,
+			java.beans.PropertyChangeSupport!addPropertyChangeListener:*->.*,
+			java.lang.Boolean!valueOf:*->.*,
+			java.lang.Integer!valueOf:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			@BasicSocialDistanceUtility!isSaferThan:int;int;int;int;int;int->boolean,
+			@BasicSocialDistanceUtility!isDerivedSafe:int;int;int->boolean,
+			@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@SocialDistanceBasicModel!isSafe:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			@BasicSocialDistanceUtility!isInferredSafe:int;int;int->boolean,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistancDerivingModel"/>
+		<property name="expectedCalls" value="
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			@BasicSocialDistanceUtility!isInterpolatedSafe:int;int;int->boolean,
+			@BasicSocialDistanceUtility!lowInterpolationHelper:int;int;int;int->int,
+			java.beans.PropertyChangeSupport!firePropertyChange:*->.*,
+			@BasicSocialDistanceUtility!isGivenSafe:int;int;int->boolean,
+			@BasicSocialDistanceUtility!highInterpolationHelper:int;int;int;int->int,
+			@SocialDistancInferringModel!isSafe:*->.*,
+			java.beans.PropertyChangeSupport!addPropertyChangeListener:*->.*,
+			java.lang.Boolean!valueOf:*->.*,
+			java.lang.Integer!valueOf:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			@BasicSocialDistanceUtility!isSaferThan:int;int;int;int;int;int->boolean,
+			@BasicSocialDistanceUtility!isDerivedSafe:int;int;int->boolean,
+			@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@SocialDistanceBasicModel!isSafe:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			@BasicSocialDistanceUtility!isInferredSafe:int;int;int->boolean,
+		"/>
+	</module>
+	<module name="MethodAccessesGlobal">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistancDerivingModel"/>
+		<property name="expectedReferences" value="
+			setValues:int;int;int->void#.*MAX_VALUE.*,
+		"/>
+	</module>
+	<module name="ExpectedGetters">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceInterpolatingModel"/>
+		<property name="expectedProperties" value="
+			ExhalationLevel:int,
+			Duration:int,
+			Distance:int,
+		"/>
+	</module>
+	<module name="ExpectedGetters">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceInterpolatingModel"/>
+		<property name="expectedProperties" value="
+			ExhalationLevel:int,
+			Duration:int,
+			Distance:int,
+		"/>
+	</module>
+	<module name="ExpectedSetters">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceInterpolatingModel"/>
+		<property name="expectedProperties" value=""/>
+	</module>
+	<module name="ExpectedSetters">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceInterpolatingModel"/>
+		<property name="expectedProperties" value=""/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceInterpolatingModel"/>
+		<property name="expectedSignatures" value="
+			isSafe:->boolean,
+			setValues:int;int;int->void,
+			addPropertyChangeListener:java.beans.PropertyChangeListener->void,
+		"/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceInterpolatingModel"/>
+		<property name="expectedSignatures" value="
+			isSafe:->boolean,
+			setValues:int;int;int->void,
+			addPropertyChangeListener:java.beans.PropertyChangeListener->void,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceInterpolatingModel"/>
+		<property name="expectedCalls" value="
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			@BasicSocialDistanceUtility!isInterpolatedSafe:int;int;int->boolean,
+			@BasicSocialDistanceUtility!lowInterpolationHelper:int;int;int;int->int,
+			@BasicSocialDistanceUtility!highInterpolationHelper:int;int;int;int->int,
+			@BasicSocialDistanceUtility!isGivenSafe:int;int;int->boolean,
+			java.beans.PropertyChangeSupport!firePropertyChange:*->.*,
+			@SocialDistancInferringModel!isSafe:*->.*,
+			java.beans.PropertyChangeSupport!addPropertyChangeListener:*->.*,
+			java.lang.Boolean!valueOf:*->.*,
+			java.lang.Integer!valueOf:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			@BasicSocialDistanceUtility!isSaferThan:int;int;int;int;int;int->boolean,
+			@BasicSocialDistanceUtility!isDerivedSafe:int;int;int->boolean,
+			@SocialDistancDerivingModel!isSafe:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@SocialDistanceBasicModel!isSafe:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			@BasicSocialDistanceUtility!isInferredSafe:int;int;int->boolean,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceInterpolatingModel"/>
+		<property name="expectedCalls" value="
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			@BasicSocialDistanceUtility!isInterpolatedSafe:int;int;int->boolean,
+			@BasicSocialDistanceUtility!lowInterpolationHelper:int;int;int;int->int,
+			@BasicSocialDistanceUtility!highInterpolationHelper:int;int;int;int->int,
+			@BasicSocialDistanceUtility!isGivenSafe:int;int;int->boolean,
+			java.beans.PropertyChangeSupport!firePropertyChange:*->.*,
+			@SocialDistancInferringModel!isSafe:*->.*,
+			java.beans.PropertyChangeSupport!addPropertyChangeListener:*->.*,
+			java.lang.Boolean!valueOf:*->.*,
+			java.lang.Integer!valueOf:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			@BasicSocialDistanceUtility!isSaferThan:int;int;int;int;int;int->boolean,
+			@BasicSocialDistanceUtility!isDerivedSafe:int;int;int->boolean,
+			@SocialDistancDerivingModel!isSafe:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@SocialDistanceBasicModel!isSafe:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			@BasicSocialDistanceUtility!isInferredSafe:int;int;int->boolean,
+		"/>
+	</module>
+	<module name="MethodAccessesGlobal">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceInterpolatingModel"/>
+		<property name="expectedReferences" value="
+			isSafe:->boolean#.*MAX_VALUE.*,
+		"/>
+	</module>
+	<module name="MethodAccessesGlobal">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceInterpolatingModel"/>
+		<property name="expectedReferences" value="
+			setValues:int;int;int->void#.*MAX_VALUE.*,
+		"/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceController"/>
+		<property name="expectedSignatures" value="
+			processInput:->void,
+		"/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceController"/>
+		<property name="expectedSignatures" value="
+			processInput:->void,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceController"/>
+		<property name="expectedCalls" value="
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			@BasicSocialDistanceUtility!isInterpolatedSafe:int;int;int->boolean,
+			@BasicSocialDistanceUtility!lowInterpolationHelper:int;int;int;int->int,
+			java.util.Scanner!nextInt:->int,
+			java.beans.PropertyChangeSupport!firePropertyChange:*->.*,
+			@BasicSocialDistanceUtility!isGivenSafe:int;int;int->boolean,
+			@BasicSocialDistanceUtility!highInterpolationHelper:int;int;int;int->int,
+			@SocialDistancInferringModel!isSafe:*->.*,
+			java.lang.Boolean!valueOf:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!setValues:*->.*,
+			java.lang.Integer!valueOf:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			java.io.PrintStream!println:*->.*,
+			@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@BasicSocialDistanceUtility!isSaferThan:int;int;int;int;int;int->boolean,
+			@BasicSocialDistanceUtility!isDerivedSafe:int;int;int->boolean,
+			@SocialDistancDerivingModel!isSafe:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@SocialDistanceBasicModel!isSafe:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			@SocialDistanceModelFactory!getSingleton:->@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel,
+			@BasicSocialDistanceUtility!isInferredSafe:int;int;int->boolean,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceController"/>
+		<property name="expectedCalls" value="
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			@BasicSocialDistanceUtility!isInterpolatedSafe:int;int;int->boolean,
+			@BasicSocialDistanceUtility!lowInterpolationHelper:int;int;int;int->int,
+			java.util.Scanner!nextInt:->int,
+			java.beans.PropertyChangeSupport!firePropertyChange:*->.*,
+			@BasicSocialDistanceUtility!isGivenSafe:int;int;int->boolean,
+			@BasicSocialDistanceUtility!highInterpolationHelper:int;int;int;int->int,
+			@SocialDistancInferringModel!isSafe:*->.*,
+			java.lang.Boolean!valueOf:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!setValues:*->.*,
+			java.lang.Integer!valueOf:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			java.io.PrintStream!println:*->.*,
+			@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@BasicSocialDistanceUtility!isSaferThan:int;int;int;int;int;int->boolean,
+			@BasicSocialDistanceUtility!isDerivedSafe:int;int;int->boolean,
+			@SocialDistancDerivingModel!isSafe:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@SocialDistanceBasicModel!isSafe:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			@SocialDistanceModelFactory!getSingleton:->@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel,
+			@BasicSocialDistanceUtility!isInferredSafe:int;int;int->boolean,
+		"/>
+	</module>
+	<module name="MethodAccessesGlobal">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceController"/>
+		<property name="expectedReferences" value="
+			processInput:->void#.*MAX_VALUE.*,
+		"/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceUilityTesterMain"/>
+		<property name="expectedSignatures" value="
+			main:String[]->void,
+		"/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceUilityTesterMain"/>
+		<property name="expectedSignatures" value="
+			main:String[]->void,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceUilityTesterMain"/>
+		<property name="expectedCalls" value="
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			@BasicSocialDistanceUtility!printGivenAndGeneratedCombinationsDerivedSafety:->void,
+			@BasicSocialDistanceUtility!highInterpolationHelper:int;int;int;int->int,
+			@BasicSocialDistanceUtility!printGeneratedCombinationDerivedSafety:String->void,
+			@BasicSocialDistanceUtility!printSafeDistancesAndDurations:int->void,
+			java.io.PrintStream!println:->void,
+			java.util.ArrayList!add:Object->boolean,
+			@BasicSocialDistanceUtility!generateValuesHelper:->int[],
+			@BasicSocialDistanceUtility!printHelper:int;int;int;boolean->void,
+			java.io.PrintStream!print:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			java.io.PrintStream!println:*->.*,
+			@BasicSocialDistanceUtility!isSaferThan:int;int;int;int;int;int->boolean,
+			@BasicSocialDistanceUtility!isDerivedSafe:int;int;int->boolean,
+			@BasicSocialDistanceUtility!printGivenAndGeneratedCombinationsInferredSafety:->void,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			java.util.List!size:->int,
+			java.lang.Math!random:->double,
+			@BasicSocialDistanceUtility!generateSafeDistancesAndDurations:int->java.util.List,
+			@BasicSocialDistanceUtility!isInferredSafe:int;int;int->boolean,
+			@BasicSocialDistanceUtility!printGivenAndGeneratedCombinationsDerivedSafety:String->void,
+			java.util.List!get:int->Object,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceUilityTesterMain"/>
+		<property name="expectedCalls" value="
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			@BasicSocialDistanceUtility!printGivenAndGeneratedCombinationsDerivedSafety:->void,
+			@BasicSocialDistanceUtility!highInterpolationHelper:int;int;int;int->int,
+			@BasicSocialDistanceUtility!printGeneratedCombinationDerivedSafety:String->void,
+			@BasicSocialDistanceUtility!printSafeDistancesAndDurations:int->void,
+			java.io.PrintStream!println:->void,
+			java.util.ArrayList!add:Object->boolean,
+			@BasicSocialDistanceUtility!generateValuesHelper:->int[],
+			@BasicSocialDistanceUtility!printHelper:int;int;int;boolean->void,
+			java.io.PrintStream!print:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			java.io.PrintStream!println:*->.*,
+			@BasicSocialDistanceUtility!isSaferThan:int;int;int;int;int;int->boolean,
+			@BasicSocialDistanceUtility!isDerivedSafe:int;int;int->boolean,
+			@BasicSocialDistanceUtility!printGivenAndGeneratedCombinationsInferredSafety:->void,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			java.util.List!size:->int,
+			java.lang.Math!random:->double,
+			@BasicSocialDistanceUtility!generateSafeDistancesAndDurations:int->java.util.List,
+			@BasicSocialDistanceUtility!isInferredSafe:int;int;int->boolean,
+			@BasicSocialDistanceUtility!printGivenAndGeneratedCombinationsDerivedSafety:String->void,
+			java.util.List!get:int->Object,
+		"/>
+	</module>
+	<module name="MethodAccessesGlobal">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceUilityTesterMain"/>
+		<property name="expectedReferences" value="
+			main:String[]->void#.*MAX_VALUE.*,
+		"/>
+	</module>
+	<module name="ExpectedInterfaces">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceView"/>
+		<property name="expectedInterfaces" value="
+			java.beans.PropertyChangeListener,
+			java.util.EventListener,
+		"/>
+	</module>
+	<module name="ExpectedInterfaces">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceView"/>
+		<property name="expectedInterfaces" value="
+			java.beans.PropertyChangeListener,
+			java.util.EventListener,
+		"/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceView"/>
+		<property name="expectedSignatures" value="
+			propertyChange:java.beans.PropertyChangeEvent->void,
+		"/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceView"/>
+		<property name="expectedSignatures" value="
+			propertyChange:java.beans.PropertyChangeEvent->void,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceView"/>
+		<property name="expectedCalls" value="
+			java.beans.PropertyChangeEvent!getPropertyName:->String,
+			java.io.PrintStream!println:*->.*,
+			java.beans.PropertyChangeEvent!getNewValue:->Object,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceView"/>
+		<property name="expectedCalls" value="
+			java.beans.PropertyChangeEvent!getPropertyName:->String,
+			java.io.PrintStream!println:*->.*,
+			java.beans.PropertyChangeEvent!getNewValue:->Object,
+		"/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceMVCInferringMain"/>
+		<property name="expectedSignatures" value="
+			main:String[]->void,
+		"/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceMVCInferringMain"/>
+		<property name="expectedSignatures" value="
+			main:String[]->void,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceMVCInferringMain"/>
+		<property name="expectedCalls" value="
+			@BasicSocialDistanceUtility!lowInterpolationHelper:int;int;int;int->int,
+			@BasicSocialDistanceUtility!isInterpolatedSafe:int;int;int->boolean,
+			java.beans.PropertyChangeSupport!firePropertyChange:*->.*,
+			@BasicSocialDistanceUtility!isGivenSafe:int;int;int->boolean,
+			@SocialDistanceController!processInput:->void,
+			java.lang.Boolean!valueOf:*->.*,
+			java.lang.Integer!valueOf:*->.*,
+			@BasicSocialDistanceUtility!isSaferThan:int;int;int;int;int;int->boolean,
+			@SocialDistanceBasicModel!isSafe:*->.*,
+			@SocialDistanceModelFactory!getSingleton:->@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel,
+			@SocialDistanceViewFactory!getSingleton:->@SocialDistanceView,
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!addPropertyChangeListener:*->.*,
+			@SocialDistanceModelFactory!setSingleton:@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel->void,
+			java.util.Scanner!nextInt:->int,
+			@BasicSocialDistanceUtility!highInterpolationHelper:int;int;int;int->int,
+			@SocialDistancInferringModel!isSafe:*->.*,
+			java.beans.PropertyChangeSupport!addPropertyChangeListener:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!setValues:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			java.io.PrintStream!println:*->.*,
+			@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@BasicSocialDistanceUtility!isDerivedSafe:int;int;int->boolean,
+			@SocialDistancDerivingModel!isSafe:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			@SocialDistanceControllerFactory!getSingleton:->@SocialDistanceController,
+			@BasicSocialDistanceUtility!isInferredSafe:int;int;int->boolean,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistanceMVCInferringMain"/>
+		<property name="expectedCalls" value="
+			@BasicSocialDistanceUtility!lowInterpolationHelper:int;int;int;int->int,
+			@BasicSocialDistanceUtility!isInterpolatedSafe:int;int;int->boolean,
+			java.beans.PropertyChangeSupport!firePropertyChange:*->.*,
+			@BasicSocialDistanceUtility!isGivenSafe:int;int;int->boolean,
+			@SocialDistanceController!processInput:->void,
+			java.lang.Boolean!valueOf:*->.*,
+			java.lang.Integer!valueOf:*->.*,
+			@BasicSocialDistanceUtility!isSaferThan:int;int;int;int;int;int->boolean,
+			@SocialDistanceBasicModel!isSafe:*->.*,
+			@SocialDistanceModelFactory!getSingleton:->@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel,
+			@SocialDistanceViewFactory!getSingleton:->@SocialDistanceView,
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!addPropertyChangeListener:*->.*,
+			@SocialDistanceModelFactory!setSingleton:@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel->void,
+			java.util.Scanner!nextInt:->int,
+			@BasicSocialDistanceUtility!highInterpolationHelper:int;int;int;int->int,
+			@SocialDistancInferringModel!isSafe:*->.*,
+			java.beans.PropertyChangeSupport!addPropertyChangeListener:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!setValues:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			java.io.PrintStream!println:*->.*,
+			@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@BasicSocialDistanceUtility!isDerivedSafe:int;int;int->boolean,
+			@SocialDistancDerivingModel!isSafe:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			@SocialDistanceControllerFactory!getSingleton:->@SocialDistanceController,
+			@BasicSocialDistanceUtility!isInferredSafe:int;int;int->boolean,
+		"/>
+	</module>
+	<module name="MethodAccessesGlobal">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistanceMVCInferringMain"/>
+		<property name="expectedReferences" value="
+			main:String[]->void#.*MAX_VALUE.*,
+		"/>
+	</module>
+	<module name="ExpectedGetters">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistancInferringModel"/>
+		<property name="expectedProperties" value="
+			ExhalationLevel:int,
+			Duration:int,
+			Distance:int,
+		"/>
+	</module>
+	<module name="ExpectedGetters">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistancInferringModel"/>
+		<property name="expectedProperties" value="
+			ExhalationLevel:int,
+			Duration:int,
+			Distance:int,
+		"/>
+	</module>
+	<module name="ExpectedSetters">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistancInferringModel"/>
+		<property name="expectedProperties" value=""/>
+	</module>
+	<module name="ExpectedSetters">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistancInferringModel"/>
+		<property name="expectedProperties" value=""/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistancInferringModel"/>
+		<property name="expectedSignatures" value="
+			isSafe:->boolean,
+			setValues:int;int;int->void,
+			addPropertyChangeListener:java.beans.PropertyChangeListener->void,
+		"/>
+	</module>
+	<module name="ExpectedSignatures">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistancInferringModel"/>
+		<property name="expectedSignatures" value="
+			isSafe:->boolean,
+			setValues:int;int;int->void,
+			addPropertyChangeListener:java.beans.PropertyChangeListener->void,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistancInferringModel"/>
+		<property name="expectedCalls" value="
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			@BasicSocialDistanceUtility!isInterpolatedSafe:int;int;int->boolean,
+			@BasicSocialDistanceUtility!lowInterpolationHelper:int;int;int;int->int,
+			java.beans.PropertyChangeSupport!firePropertyChange:*->.*,
+			@BasicSocialDistanceUtility!isGivenSafe:int;int;int->boolean,
+			@BasicSocialDistanceUtility!highInterpolationHelper:int;int;int;int->int,
+			java.beans.PropertyChangeSupport!addPropertyChangeListener:*->.*,
+			java.lang.Boolean!valueOf:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			java.lang.Integer!valueOf:*->.*,
+			@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@BasicSocialDistanceUtility!isSaferThan:int;int;int;int;int;int->boolean,
+			@BasicSocialDistanceUtility!isDerivedSafe:int;int;int->boolean,
+			@SocialDistancDerivingModel!isSafe:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@SocialDistanceBasicModel!isSafe:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			@BasicSocialDistanceUtility!isInferredSafe:int;int;int->boolean,
+		"/>
+	</module>
+	<module name="MissingMethodCall">
+		<property name="severity" value="info"/>
+		<property name="includeTypeTags" value="@SocialDistancInferringModel"/>
+		<property name="expectedCalls" value="
+			@SocialDistanceClassifierFactory!getSingleton:->weka.classifiers.Classifier,
+			@BasicSocialDistanceUtility!isInterpolatedSafe:int;int;int->boolean,
+			@BasicSocialDistanceUtility!lowInterpolationHelper:int;int;int;int->int,
+			java.beans.PropertyChangeSupport!firePropertyChange:*->.*,
+			@BasicSocialDistanceUtility!isGivenSafe:int;int;int->boolean,
+			@BasicSocialDistanceUtility!highInterpolationHelper:int;int;int;int->int,
+			java.beans.PropertyChangeSupport!addPropertyChangeListener:*->.*,
+			java.lang.Boolean!valueOf:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!predictString:weka.classifiers.Classifier;String[];.*;String;String[]->String,
+			java.lang.Integer!valueOf:*->.*,
+			@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@BasicSocialDistanceUtility!isSaferThan:int;int;int;int;int;int->boolean,
+			@BasicSocialDistanceUtility!isDerivedSafe:int;int;int->boolean,
+			@SocialDistancDerivingModel!isSafe:*->.*,
+			@SocialDistancDerivingModel+@SocialDistancInferringModel+@SocialDistanceBasicModel+@SocialDistanceInterpolatingModel!isSafe:*->.*,
+			@SocialDistanceBasicModel!isSafe:*->.*,
+			gradingTools.comp524f20.assignment1.WekaUtil!buildTreeModel:weka.classifiers.Classifier;String->void,
+			@BasicSocialDistanceUtility!isInferredSafe:int;int;int->boolean,
+		"/>
+	</module>
+	<module name="MethodAccessesGlobal">
+		<property name="severity" value="warning"/>
+		<property name="includeTypeTags" value="@SocialDistancInferringModel"/>
+		<property name="expectedReferences" value="
+			setValues:int;int;int->void#.*MAX_VALUE.*,
+		"/>
+	</module>
